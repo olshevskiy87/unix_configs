@@ -1,0 +1,8 @@
+\set QUIET
+\pset null '[null]'
+\set PROMPT1 '(%n@%M:%>) %`date +%H:%M:%S` [%/] \n%x$ '
+\set PROMPT2 '>> '
+\set HISTFILE ~/.psql_history- :DBNAME
+\pset pager always
+\unset QUIET
+

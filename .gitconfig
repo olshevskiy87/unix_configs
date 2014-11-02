@@ -1,0 +1,11 @@
+[alias]
+    st = status
+    co = checkout
+    ci = commit
+    bbranch = branch -v
+[user]
+	email = olshevskiy87@bk.ru
+	name = Dmitriy Olshevskiy
+[push]
+	default = simple
+

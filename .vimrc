@@ -9,7 +9,7 @@ syntax enable
 colorscheme darkblue
 
 " indentation
-set autoindent
+"set autoindent
 set tabstop=4
 set expandtab
 set shiftwidth=4

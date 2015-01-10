@@ -1,7 +1,7 @@
 " common settings
 set nowrap
 set ruler
-set number
+"set number
 set showcmd
 set backspace=indent,eol,start
 set scrolloff=10

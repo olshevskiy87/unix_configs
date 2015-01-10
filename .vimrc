@@ -1,11 +1,17 @@
 " common settings
 set nowrap
 set ruler
+no <down> <Nop>
+no <left> <Nop>
+no <right> <Nop>
+no <up> <Nop>
+
 "set number
 set showcmd
 set backspace=indent,eol,start
 set scrolloff=10
 set laststatus=2
+set clipboard=unnamed
 
 " colors
 syntax enable

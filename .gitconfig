@@ -3,12 +3,12 @@
     co = checkout
     ci = commit
     bbranch = branch -v
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative
 [user]
     email = olshevskiy87@bk.ru
     name = Dmitriy Olshevskiy
 [push]
     default = current
-
 [color]
     ui = auto
 [color "branch"]

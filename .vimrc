@@ -1,10 +1,22 @@
 " common settings
 set nowrap
 set ruler
-no <down> <Nop>
-no <left> <Nop>
+" no arrows in any mode
+" normal mode
+no <down>  <Nop>
+no <left>  <Nop>
 no <right> <Nop>
-no <up> <Nop>
+no <up>    <Nop>
+" insert mode
+ino <down>  <Nop>
+ino <left>  <Nop>
+ino <right> <Nop>
+ino <up>    <Nop>
+" visual mode
+vno <down>  <Nop>
+vno <left>  <Nop>
+vno <right> <Nop>
+vno <up>    <Nop>
 
 "set number
 set showcmd
@@ -48,4 +60,13 @@ nnoremap <Enter> :noh<CR>
 " show redundant whitespaces and tabs
 set listchars=tab:>-,trail:~,extends:>,precedes:<
 set list
+
+" general mapping
+nnoremap tn  :tabnew<CR>
+nnoremap th  :tabfirst<CR>
+nnoremap tj  :tabnext<CR>
+nnoremap tk  :tabprev<CR>
+nnoremap tl  :tablast<CR>
+nnoremap tm  :tabm<Space>
+nnoremap td  :tabclose<CR>
 

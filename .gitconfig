@@ -4,10 +4,10 @@
     ci = commit
     bbranch = branch -v
 [user]
-	email = olshevskiy87@bk.ru
-	name = Dmitriy Olshevskiy
+    email = olshevskiy87@bk.ru
+    name = Dmitriy Olshevskiy
 [push]
-	default = current
+    default = current
 
 [color]
     ui = auto

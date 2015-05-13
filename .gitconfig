@@ -4,6 +4,7 @@
     ci = commit
     bbranch = branch -v
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative
+    llg = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=iso
 [user]
     email = olshevskiy87@bk.ru
     name = Dmitriy Olshevskiy

@@ -1,7 +1,12 @@
 \set QUIET
+
 \pset null '[null]'
+\pset expanded auto
+
 \set PROMPT1 '(%n@%M:%>) %`date +%H:%M:%S` [%/] \n%x$$ '
 \set PROMPT2 '>> '
+
 \set HISTFILE ~/.psql_history- :DBNAME
+
 \unset QUIET
 

@@ -46,13 +46,15 @@ set incsearch
 
 " open any file with a pre-existing swapfile in readonly mode
 " from (Damian Conway's .vimrc)
-augroup NoSimultaneousEdits
-    autocmd!
-    autocmd SwapExists * let v:swapchoice = 'o'
-    autocmd SwapExists * echo 'Duplicate edit session (readonly)'
-    autocmd SwapExists * echohl None
-    autocmd SwapExists * sleep 1
-augroup END
+if version > 730
+    augroup NoSimultaneousEdits
+        autocmd!
+        autocmd SwapExists * let v:swapchoice = 'o'
+        autocmd SwapExists * echo 'Duplicate edit session (readonly)'
+        autocmd SwapExists * echohl None
+        autocmd SwapExists * sleep 1
+    augroup END
+endif
 
 " hide highlighting of the search results by pressing Enter
 nnoremap <Enter> :noh<CR>

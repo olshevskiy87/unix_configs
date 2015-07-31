@@ -3,8 +3,8 @@
     co = checkout
     ci = commit
     bbranch = branch -v
-    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative
-    llg = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=iso
+    lg = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(green)%d%Creset %s %C(red)(%cr) %C(yellow)<%an>%Creset' --abbrev-commit --date=relative
+    llg = log --pretty=format:'%C(yellow)%h %Cred%ad %C(yellow)%an%C(green)%d %Creset%s' --date=iso
 [user]
     email = olshevskiy87@bk.ru
     name = Dmitriy Olshevskiy
@@ -25,4 +25,3 @@
     added = yellow
     changed = green
     untracked = cyan
-

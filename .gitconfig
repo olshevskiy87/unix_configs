@@ -1,10 +1,12 @@
 [alias]
-    st = status
+    st = status -s              # short mode for status
     co = checkout
     ci = commit
-    bbranch = branch -v
+    # pretty log shortcuts
     lg = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(green)%d%Creset %s %C(red)(%cr) %C(yellow)<%an>%Creset' --abbrev-commit --date=relative
     llg = log --pretty=format:'%C(yellow)%h %Cred%ad %C(yellow)%an%C(green)%d %Creset%s' --date=iso
+    difft = difftool -y         # difftool without an accepting
+    shows = show --stat         # show with statistics
 [user]
     email = olshevskiy87@bk.ru
     name = Dmitriy Olshevskiy
@@ -25,3 +27,6 @@
     added = yellow
     changed = green
     untracked = cyan
+[diff]
+    tool = vimdiff              # vim as default diff tool
+

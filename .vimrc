@@ -27,6 +27,8 @@ endif
 set tabstop=4
 set expandtab
 set shiftwidth=4
+set smartindent
+set pastetoggle=<F4>
 
 " show redundant whitespaces and tabs
 set listchars=tab:>-,trail:~,extends:>,precedes:<

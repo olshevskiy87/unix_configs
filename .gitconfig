@@ -29,4 +29,6 @@
     untracked = cyan
 [diff]
     tool = vimdiff              # vim as default diff tool
+[merge]
+    tool = vimdiff
 

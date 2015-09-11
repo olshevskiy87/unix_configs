@@ -52,6 +52,9 @@ if version > 730
 endif
 
 """ keys mapping
+nnoremap n nzz
+nnoremap N Nzz
+
 " hide highlighting of the search results by pressing Enter
 nnoremap <Enter> :noh<CR>
 

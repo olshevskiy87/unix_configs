@@ -1,5 +1,6 @@
 " common settings
 set nowrap
+set nowrapscan
 set ruler
 set showcmd
 set backspace=indent,eol,start

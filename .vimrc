@@ -62,7 +62,7 @@ nnoremap n nzz
 nnoremap N Nzz
 
 " hide highlighting of the search results by pressing Enter
-nnoremap <Enter> :noh<CR>
+nnoremap <Tab> :noh<CR>
 
 " tabs keys mapping
 nnoremap tn :tabnew<CR>

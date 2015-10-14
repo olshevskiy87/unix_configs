@@ -7,13 +7,12 @@ if [ ! -e ~/.vim/colors/mydiffcolors.vim ]; then
 fi
 
 # dot-files in HOME dir
-if [ ! -e ~/.vimrc ]; then
-    ln -s ~/git/unix_configs/.vimrc ~/.vimrc
-fi
-if [ ! -e ~/.psqlrc ]; then
-    ln -s ~/git/unix_configs/.psqlrc ~/.psqlrc
-fi
-if [ ! -e ~/.gitconfig ]; then
-    ln -s ~/git/unix_configs/.gitconfig ~/.gitconfig
-fi
+for f in .vimrc .psqlrc .gitconfig .tmux.conf
+do
+    echo "file [$f]"
+    if [ ! -e ~/$f ]; then
+        echo "link does not exists. try to create..."
+        ln -s ~/git/unix_configs/$f ~/$f
+    fi
+done
 

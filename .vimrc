@@ -60,6 +60,7 @@ endif
 """ keys mapping
 nnoremap n nzz
 nnoremap N Nzz
+nnoremap J gJ
 
 " hide highlighting of the search results by pressing Enter
 nnoremap <Tab> :noh<CR>

@@ -1,0 +1,57 @@
+[
+    {
+        "name": "ctrlp.vim",
+        "url": "https://github.com/kien/ctrlp.vim.git",
+        "enable": true
+    },
+    {
+        "name": "nerdcommenter",
+        "url": "https://github.com/scrooloose/nerdcommenter.git",
+        "enable": true
+    },
+    {
+        "name": "vim-surround",
+        "url": "https://github.com/tpope/vim-surround.git",
+        "enable": true
+    },
+    {
+        "name": "vim-unimpaired",
+        "url": "https://github.com/tpope/vim-unimpaired.git",
+        "enable": true
+    },
+    {
+        "name": "vim-airline",
+        "url": "https://github.com/bling/vim-airline.git",
+        "enable": true
+    },
+    {
+        "name": "vim-repeat",
+        "url": "https://github.com/tpope/vim-repeat.git",
+        "enable": true
+    },
+    {
+        "name": "vim-bookmarks",
+        "url": "https://github.com/MattesGroeger/vim-bookmarks.git",
+        "enable": true
+    },
+    {
+        "name": "nerdtree" ,
+        "url": "https://github.com/scrooloose/nerdtree.git",
+        "enable": false
+    },
+    {
+        "name": "vim-exchange",
+        "url": "https://github.com/tommcdo/vim-exchange.git",
+        "enable": false
+    },
+    {
+        "name": "vim-togglenumber",
+        "url": "https://github.com/tkhoa2711/vim-togglenumber.git",
+        "enable": false
+    },
+    {
+        "name": "vim-fugitive",
+        "url": "https://github.com/tpope/vim-fugitive.git",
+        "enable": false
+    }
+]

@@ -1,9 +1,12 @@
 # unix_configs
-- .gitconfig
-- .vimrc
-- .vim/*
-- .psqlrc
-- .tmux.conf
+- gitconfig
+- vimrc
+- vim/*
+- psqlrc
+- tmux.conf
+
+# git submodules
+- https://github.com/tpope/vim-pathogen.git
 
 ## manage_vim_plugins.pl
 Stupid vim plugins manager.

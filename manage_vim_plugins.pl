@@ -8,7 +8,7 @@ use IPC::Cmd qw(can_run);
 use File::Spec qw(catdir);
 use File::HomeDir;
 use File::chdir;
-use File::Path qw(rmtree);
+use File::Path qw(rmtree make_path);
 
 my $git_exec = can_run('git')
     or die("error: git is not enabled/installed. exit.\n");
@@ -31,7 +31,12 @@ GetOptions(
 usage() if $help or !$bundle_path or !$plugins_fname;
 
 if (! -d $bundle_path) {
-    die("error: bundle path doesn't exist. exit.\n");
+    print "bundle path doesn't exist. try to create... ";
+    if (scalar make_path($bundle_path)) {
+        print "ok.\n";
+    } else {
+        die("error. exit.\n");
+    }
 }
 if (! -f $plugins_fname) {
     die("error: file with plugins list doesn't exist. exit.\n");

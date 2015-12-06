@@ -31,7 +31,7 @@ for f in vimrc psqlrc gitconfig tmux.conf
 do
     dot_f=.$f
     echo "file [$dot_f]"
-    if [ -e ~/$dot_f ]; then
+    if [ -L ~/$dot_f ]; then
         read -p "already exists. rewrite? " -n 1 -r
         if [[ $REPLY =~ ^[Yy]$ ]]; then
             ln -sf $DIR/$f ~/$dot_f

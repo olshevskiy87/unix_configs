@@ -1,4 +1,4 @@
-if version >= 730
+if version >= 700
     filetype plugin indent on
 endif
 if filereadable($HOME.'/.vim/autoload/pathogen.vim')
@@ -16,7 +16,7 @@ set laststatus=2
 set clipboard=unnamed
 
 """ colors
-if version >= 730
+if version >= 700
     syntax enable
 endif
 
@@ -94,7 +94,7 @@ vno <right> <Nop>
 vno <up>    <Nop>
 
 " change the encoding
-if version >= 730
+if version >= 700
     set wildmenu
     set wildmode=longest:full,full
     set wcm=<Tab>

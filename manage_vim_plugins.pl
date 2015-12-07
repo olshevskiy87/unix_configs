@@ -9,9 +9,14 @@ use File::Spec qw(catdir);
 use File::HomeDir;
 use File::chdir;
 use File::Path qw(rmtree make_path);
+use Carp qw(carp);
+use English qw(-no_match_vars);
+
+use vars qw($VERSION);
+$VERSION = '0.001';
 
 my $git_exec = can_run('git')
-    or die("error: git is not enabled/installed. exit.\n");
+    or die "error: git is not enabled/installed. exit.\n";
 
 my $bundle_path = File::Spec->catdir((
     File::HomeDir->my_home,
@@ -22,29 +27,31 @@ my $update = 0;
 my $help = 0;
 
 GetOptions(
-    "bundle_path=s" => \$bundle_path,
-    "plugins=s" => \$plugins_fname,
-    "update" => \$update,
-    "help|?" => \$help
+    'bundle_path=s' => \$bundle_path,
+    'plugins=s' => \$plugins_fname,
+    'update' => \$update,
+    'help|?' => \$help
 ) or usage();
 
-usage() if $help or !$bundle_path or !$plugins_fname;
+if ($help || !$bundle_path || !$plugins_fname) {
+    usage();
+}
 
 if (! -d $bundle_path) {
-    print "bundle path doesn't exist. try to create... ";
+    carp 'bundle path doesn\'t exist. try to create... ';
     if (scalar make_path($bundle_path)) {
-        print "ok.\n";
+        carp "ok.\n";
     } else {
-        die("error. exit.\n");
+        die "error. exit.\n";
     }
 }
 if (! -f $plugins_fname) {
-    die("error: file with plugins list doesn't exist. exit.\n");
+    die "error: file with plugins list doesn't exist. exit.\n";
 }
 
 my $all_plugins = json_file_to_perl($plugins_fname);
 my $plugin_path;
-for my $plugin (@$all_plugins) {
+for my $plugin (@{$all_plugins}) {
     printf "%-15s: %s\n",
         $plugin->{name},
         ($plugin->{enable} ? $plugin->{url} : 'disabled');
@@ -63,27 +70,29 @@ for my $plugin (@$all_plugins) {
             }
         } else {
             # plugin is not installed - clone it
-            print "plugin [$plugin->{name}] not found. create it...\n";
+            carp "plugin [$plugin->{name}] not found. create it...\n";
             local $CWD = $bundle_path;
             `git clone -q $plugin->{url} $plugin->{name}`;
         }
     } else {
         # delete plugin if exist
         if (-d $plugin_path) {
-            print "plugin [$plugin->{name}] disabled, but still exist. remove it...\n";
+            carp "plugin [$plugin->{name}] disabled, but still exist. remove it...\n";
             rmtree($plugin_path);
         }
     }
 }
 
 sub usage {
-    die("Stupid vim plugins manager.
+    die <<"EOF";
+Stupid vim plugins manager.
 Usage:
-    $0 [OPTIONS]
+    $PROGRAM_NAME [OPTIONS]
 Options:
     --bundle_path=PATH  vim bundles path (default: '~/.vim/bundle')
     --plugins=FILENAME  path to the json-file with required plugins (default: 'plugins.json')
     --update            update plugin if already exist
-    -? | --help         show this help, then exit\n");
+    -? | --help         show this help, then exit
+EOF
 }
 

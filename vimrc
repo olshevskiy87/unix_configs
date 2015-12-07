@@ -1,4 +1,6 @@
-filetype plugin indent on
+if version >= 730
+    filetype plugin indent on
+endif
 if filereadable($HOME.'/.vim/autoload/pathogen.vim')
     execute pathogen#infect()
 endif
@@ -14,7 +16,9 @@ set laststatus=2
 set clipboard=unnamed
 
 """ colors
-syntax enable
+if version >= 730
+    syntax enable
+endif
 
 set t_Co=256
 
@@ -90,11 +94,12 @@ vno <right> <Nop>
 vno <up>    <Nop>
 
 " change the encoding
-set wildmenu
-set wildmode=longest:full,full
-set wcm=<Tab>
-menu Encoding.CP1251 :e ++enc=cp1251<CR>
-menu Encoding.KOI8-U :e ++enc=koi8-u<CR>
-menu Encoding.UTF-8  :e ++enc=utf-8<CR>
-map <F8> :emenu Encoding.<TAB>
-
+if version >= 730
+    set wildmenu
+    set wildmode=longest:full,full
+    set wcm=<Tab>
+    menu Encoding.CP1251 :e ++enc=cp1251<CR>
+    menu Encoding.KOI8-U :e ++enc=koi8-u<CR>
+    menu Encoding.UTF-8  :e ++enc=utf-8<CR>
+    map <F8> :emenu Encoding.<TAB>
+endif

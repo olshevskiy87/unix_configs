@@ -9,7 +9,6 @@ use File::Spec qw(catdir);
 use File::HomeDir;
 use File::chdir;
 use File::Path qw(rmtree make_path);
-use Carp qw(carp);
 use English qw(-no_match_vars);
 
 use vars qw($VERSION);
@@ -38,9 +37,9 @@ if ($help || !$bundle_path || !$plugins_fname) {
 }
 
 if (! -d $bundle_path) {
-    carp 'bundle path doesn\'t exist. try to create... ';
+    print 'bundle path doesn\'t exist. try to create... ';
     if (scalar make_path($bundle_path)) {
-        carp "ok.\n";
+        print "ok.\n";
     } else {
         die "error. exit.\n";
     }
@@ -70,14 +69,14 @@ for my $plugin (@{$all_plugins}) {
             }
         } else {
             # plugin is not installed - clone it
-            carp "plugin [$plugin->{name}] not found. create it...\n";
+            print "plugin [$plugin->{name}] not found. create it...\n";
             local $CWD = $bundle_path;
             `git clone -q $plugin->{url} $plugin->{name}`;
         }
     } else {
         # delete plugin if exist
         if (-d $plugin_path) {
-            carp "plugin [$plugin->{name}] disabled, but still exist. remove it...\n";
+            print "plugin [$plugin->{name}] disabled, but still exist. remove it...\n";
             rmtree($plugin_path);
         }
     }

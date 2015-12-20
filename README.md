@@ -31,5 +31,4 @@ Perl-modules required:
 - File::HomeDir
 - File::chdir
 - File::Path
-- Carp
 - English

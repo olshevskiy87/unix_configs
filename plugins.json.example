@@ -35,6 +35,11 @@
         "enable": true
     },
     {
+        "name": "vim-startify",
+        "url": "https://github.com/mhinz/vim-startify",
+        "enable": true
+    },
+    {
         "name": "nerdtree" ,
         "url": "https://github.com/scrooloose/nerdtree.git",
         "enable": false

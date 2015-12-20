@@ -103,3 +103,12 @@ if version >= 700
     menu Encoding.UTF-8  :e ++enc=utf-8<CR>
     map <F8> :emenu Encoding.<TAB>
 endif
+
+""" plugins settings
+" vim-startify
+let g:startify_bookmarks = [
+    \ {'c': '~/.vimrc'},
+    \ {'g': '~/git/'},
+\ ]
+let g:startify_session_delete_buffers = 1
+let g:startify_session_persistence = 1

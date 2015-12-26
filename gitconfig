@@ -33,4 +33,5 @@
     tool = vimdiff              # vim as default diff tool
 [merge]
     tool = vimdiff
-
+[include]
+    path = ~/.gitconfig.custom

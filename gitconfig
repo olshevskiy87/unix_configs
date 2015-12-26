@@ -1,6 +1,8 @@
 [alias]
     st = status -s              # short mode for status
+    br = branch
     co = checkout
+    cb = checkout -b
     ci = commit
     # pretty log shortcuts
     lg = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(green)%d%Creset %s %C(red)(%cr) %C(yellow)<%an>%Creset'

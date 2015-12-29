@@ -112,3 +112,8 @@ let g:startify_bookmarks = [
 \ ]
 let g:startify_session_delete_buffers = 1
 let g:startify_session_persistence = 1
+" ctrl-p
+let g:ctrlp_by_filename = 1
+let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:20,results:20'
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_show_hidden = 1

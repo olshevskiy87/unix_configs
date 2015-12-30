@@ -40,6 +40,16 @@
         "enable": true
     },
     {
+        "name": "vim-peekaboo",
+        "url": "https://github.com/junegunn/vim-peekaboo",
+        "enable": true
+    },
+    {
+        "name": "vim-fugitive",
+        "url": "https://github.com/tpope/vim-fugitive.git",
+        "enable": true
+    },
+    {
         "name": "nerdtree" ,
         "url": "https://github.com/scrooloose/nerdtree.git",
         "enable": false
@@ -52,11 +62,6 @@
     {
         "name": "vim-togglenumber",
         "url": "https://github.com/tkhoa2711/vim-togglenumber.git",
-        "enable": false
-    },
-    {
-        "name": "vim-fugitive",
-        "url": "https://github.com/tpope/vim-fugitive.git",
         "enable": false
     }
 ]

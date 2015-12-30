@@ -65,6 +65,7 @@ endif
 nnoremap n nzz
 nnoremap N Nzz
 nnoremap J gJ
+nnoremap <F12> :Startify<CR>
 
 " hide highlighting of the search results by pressing Enter
 nnoremap <Tab> :noh<CR>
@@ -104,12 +105,18 @@ if version >= 700
     map <F8> :emenu Encoding.<TAB>
 endif
 
-""" plugins settings
+""" custom plugins settings
 " vim-startify
 let g:startify_bookmarks = [
     \ {'c': '~/.vimrc'},
     \ {'g': '~/git/'},
 \ ]
+let g:startify_list_order = [
+    \ ['   Sessions'],      'sessions',
+    \ ['   MRU'],           'files',
+    \ ['   MRU '.getcwd()], 'dir',
+    \ ['   Bookmarks'],     'bookmarks',
+  \ ]
 let g:startify_session_delete_buffers = 1
 let g:startify_session_persistence = 1
 " ctrl-p
@@ -117,3 +124,6 @@ let g:ctrlp_by_filename = 1
 let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:20,results:20'
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_show_hidden = 1
+" vim-peekaboo
+let g:peekaboo_window = 'vertical botright 100new'
+let g:peekaboo_delay = 0

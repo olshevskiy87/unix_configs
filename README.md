@@ -32,3 +32,14 @@ Perl-modules required:
 - File::chdir
 - File::Path
 - English
+
+## update_vim_plugins.sh
+Dumb vim plugins updater.
+
+Usage:
+Just edit plugins.list using template <name>|<url>|<enabled:0|1>
+and run
+```
+./update_vim_plugins.sh
+```
+Default bundle path is ~/.vim/bundle.

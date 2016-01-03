@@ -127,3 +127,5 @@ let g:ctrlp_show_hidden = 1
 " vim-peekaboo
 let g:peekaboo_window = 'vertical botright 100new'
 let g:peekaboo_delay = 0
+" vim-easy-align
+vmap <Enter> <Plug>(EasyAlign)

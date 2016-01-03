@@ -20,13 +20,13 @@ do
         echo bundle not exist
         if [ $p_enable -eq 1 ]; then
             echo clone it...
-            `git clone -q $p_url`
+            git clone $p_url
         fi
     else
         echo bundle exist
         if [ $p_enable -eq 0 ]; then
             echo remove it...
-            `rm -rf $p_name`
+            rm -rf $p_name
         fi
     fi
 done < "$cur_path/plugins.list"

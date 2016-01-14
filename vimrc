@@ -14,6 +14,7 @@ set backspace=indent,eol,start
 set scrolloff=10
 set laststatus=2
 set clipboard=unnamed
+set nofoldenable
 
 """ colors
 if version >= 700

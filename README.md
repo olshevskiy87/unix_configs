@@ -1,4 +1,6 @@
 # unix_configs
+- profile
+- bashrc
 - gitconfig
 - vimrc
 - vim/*

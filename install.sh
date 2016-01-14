@@ -1,3 +1,4 @@
+dotfiles="profile bashrc vimrc psqlrc gitconfig tmux.conf"
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}"i)" && pwd)"
 
 function create_or_update_file {
@@ -26,8 +27,11 @@ git submodule update --init --recursive
 create_or_update_file ~/.vim/colors mydiffcolors.vim vim/colors
 create_or_update_file ~/.vim/autoload pathogen.vim vim-pathogen/autoload
 
+# ssh-find-agent
+create_or_update_file ~ ssh-find-agent.sh ssh-find-agent
+
 # dot-files in HOME dir
-for f in vimrc psqlrc gitconfig tmux.conf
+for f in $dotfiles
 do
     dot_f=.$f
     echo "file [$dot_f]"

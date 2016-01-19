@@ -36,3 +36,5 @@ fi
 
 # close ssh-agent if it had been started in the current session
 trap 'test -n "$SSH_AGENT_PID" && eval `/usr/bin/ssh-agent -k`' 0
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

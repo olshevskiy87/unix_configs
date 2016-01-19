@@ -1,9 +1,29 @@
 if version >= 700
     filetype plugin indent on
 endif
-if filereadable($HOME.'/.vim/autoload/pathogen.vim')
-    execute pathogen#infect()
-endif
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-repeat'
+Plug 'junegunn/seoul256.vim'
+Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/vim-peekaboo'
+Plug 'junegunn/gv.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-pseudocl'
+Plug 'junegunn/vim-oblique'
+Plug 'mhinz/vim-signify'
+Plug 'mhinz/vim-startify'
+Plug 'bling/vim-airline'
+Plug 'kshenoy/vim-signature'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+
+call plug#end()
 
 " common settings
 set nowrap
@@ -20,18 +40,12 @@ set nofoldenable
 if version >= 700
     syntax enable
 endif
-
 set t_Co=256
-
-if &diff " if vim used as git diff tool (vimdiff)
-    try | colorscheme mydiffcolors | catch /.*/ | echo v:exception | endtry
-else " normal mode
-    try | colorscheme darkblue | catch /.*/ | echo v:exception | endtry
-endif
+colorscheme seoul256
 
 if exists('+colorcolumn')
     highlight ColorColumn ctermbg=235 guibg=#2c2d27
-    let &colorcolumn="80,".join(range(120,999),",")
+    let &colorcolumn="80"
 endif
 
 " indentation
@@ -67,6 +81,9 @@ nnoremap n nzz
 nnoremap N Nzz
 nnoremap J gJ
 nnoremap <F12> :Startify<CR>
+
+inoremap <F10> <esc>:NERDTreeToggle<cr>
+nnoremap <F10> :NERDTreeToggle<cr>
 
 " hide highlighting of the search results by pressing Enter
 nnoremap <Tab> :noh<CR>
@@ -120,13 +137,10 @@ let g:startify_list_order = [
   \ ]
 let g:startify_session_delete_buffers = 1
 let g:startify_session_persistence = 1
-" ctrl-p
-let g:ctrlp_by_filename = 1
-let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:20,results:20'
-let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_show_hidden = 1
 " vim-peekaboo
 let g:peekaboo_window = 'vertical botright 100new'
 let g:peekaboo_delay = 0
 " vim-easy-align
 vmap <Enter> <Plug>(EasyAlign)
+" new tab for vim-plug
+let g:plug_window='tabnew'

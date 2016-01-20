@@ -24,7 +24,7 @@ if [ -d "$HOME/bin" ]; then
 fi
 
 # start ssh-agent if it's not already running
-if [ ! "$(pidof ssh-agent)" ]; then
+if [ ! "`ps ax | grep ssh-agent | grep -ivE \"(grep|defunct)\"`" ]; then
     eval $(ssh-agent)
 fi
 

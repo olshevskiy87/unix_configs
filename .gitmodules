@@ -4,3 +4,6 @@
 [submodule "ssh-find-agent"]
 	path = ssh-find-agent
 	url = https://github.com/wwalker/ssh-find-agent.git
+[submodule "vim-plug"]
+	path = vim-plug
+	url = https://github.com/junegunn/vim-plug.git

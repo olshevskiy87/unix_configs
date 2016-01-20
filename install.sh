@@ -23,9 +23,8 @@ function create_or_update_file {
 # init git submodules
 git submodule update --init --recursive
 
-# colors for vimdiff
-create_or_update_file ~/.vim/colors mydiffcolors.vim vim/colors
-create_or_update_file ~/.vim/autoload pathogen.vim vim-pathogen/autoload
+# install plugin manager
+create_or_update_file ~/.vim/autoload plug.vim vim-plug
 
 # ssh-find-agent
 create_or_update_file ~ ssh-find-agent.sh ssh-find-agent
@@ -47,4 +46,3 @@ do
         ln -s $DIR/$f ~/$dot_f
     fi
 done
-

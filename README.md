@@ -8,7 +8,6 @@
 - tmux.conf
 
 # git submodules
-- https://github.com/tpope/vim-pathogen.git
 - https://github.com/wwalker/ssh-find-agent.git
 - https://github.com/junegunn/vim-plug.git
 

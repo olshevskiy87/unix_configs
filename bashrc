@@ -4,6 +4,11 @@ export PS1="[\u@\h \w]$ "
 # aliases
 alias ll='ls -la --color=auto'
 alias greps='grep -srni --color'
+alias glb='git lg --no-merges master..'
+
+if [ -f "$HOME/.custom_aliases.sh" ]; then
+    source "$HOME/.custom_aliases.sh"
+fi
 
 if which tmux &> /dev/null; then
     alias tmux='TERM=screen-256color-bce tmux'

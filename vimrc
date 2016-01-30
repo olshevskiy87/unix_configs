@@ -12,16 +12,18 @@ Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-peekaboo'
 Plug 'junegunn/gv.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'on': 'FZF', 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-pseudocl'
 Plug 'junegunn/vim-oblique'
 Plug 'mhinz/vim-signify'
 Plug 'mhinz/vim-startify'
 Plug 'bling/vim-airline'
-Plug 'kshenoy/vim-signature'
+Plug 'MattesGroeger/vim-bookmarks'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'easymotion/vim-easymotion'
+Plug 'rhysd/committia.vim'
 
 call plug#end()
 
@@ -80,10 +82,10 @@ endif
 nnoremap n nzz
 nnoremap N Nzz
 nnoremap J gJ
-nnoremap <F12> :Startify<CR>
-
+nnoremap <F7> :set expandtab!<cr>
 inoremap <F10> <esc>:NERDTreeToggle<cr>
 nnoremap <F10> :NERDTreeToggle<cr>
+nnoremap <F12> :Startify<CR>
 
 " hide highlighting of the search results by pressing Enter
 nnoremap <Tab> :noh<CR>
@@ -144,3 +146,7 @@ let g:peekaboo_delay = 0
 vmap <Enter> <Plug>(EasyAlign)
 " new tab for vim-plug
 let g:plug_window='tabnew'
+" nerdtree
+let NERDTreeShowHidden=1
+" vimchat
+let g:vimchat_timestampformat="[%d.%m.%y %H:%M:%S]"

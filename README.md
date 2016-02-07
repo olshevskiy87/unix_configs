@@ -6,6 +6,7 @@
 - vim/*
 - psqlrc
 - tmux.conf
+- pylintrc
 
 # git submodules
 - https://github.com/wwalker/ssh-find-agent.git

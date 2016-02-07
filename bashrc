@@ -5,6 +5,7 @@ export PS1="[\u@\h \w]$ "
 alias ll='ls -la --color=auto'
 alias greps='grep -srni --color'
 alias glb='git lg --no-merges master..'
+alias pylint='pylint --rcfile=~/.pylintrc -r n'
 
 if [ -f "$HOME/.custom_aliases.sh" ]; then
     source "$HOME/.custom_aliases.sh"

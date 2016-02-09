@@ -24,6 +24,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'easymotion/vim-easymotion'
 Plug 'rhysd/committia.vim'
+Plug 'vim-scripts/taglist.vim', { 'on': 'TlistToggle' }
+Plug 'klen/python-mode'
 
 call plug#end()
 
@@ -82,7 +84,10 @@ endif
 nnoremap n nzz
 nnoremap N Nzz
 nnoremap J gJ
+nnoremap <F6> :SignifyToggle<cr>
 nnoremap <F7> :set expandtab!<cr>
+inoremap <F9> <esc>:TlistToggle<cr>
+nnoremap <F9> :TlistToggle<cr>
 inoremap <F10> <esc>:NERDTreeToggle<cr>
 nnoremap <F10> :NERDTreeToggle<cr>
 nnoremap <F12> :Startify<CR>
@@ -150,3 +155,6 @@ let g:plug_window='tabnew'
 let NERDTreeShowHidden=1
 " vimchat
 let g:vimchat_timestampformat="[%d.%m.%y %H:%M:%S]"
+" signify
+nmap [c <Plug>(signify-prev-hunk)zz
+nmap ]c <Plug>(signify-next-hunk)zz

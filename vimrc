@@ -16,7 +16,7 @@ Plug 'junegunn/fzf', { 'on': 'FZF', 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-pseudocl'
 Plug 'junegunn/vim-oblique'
-Plug 'mhinz/vim-signify'
+"Plug 'mhinz/vim-signify'
 Plug 'mhinz/vim-startify'
 Plug 'bling/vim-airline'
 Plug 'MattesGroeger/vim-bookmarks'
@@ -26,6 +26,9 @@ Plug 'easymotion/vim-easymotion'
 Plug 'rhysd/committia.vim'
 Plug 'vim-scripts/taglist.vim', { 'on': 'TlistToggle' }
 Plug 'klen/python-mode'
+Plug 'airblade/vim-rooter'
+Plug 'airblade/vim-helptab'
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
@@ -84,7 +87,7 @@ endif
 nnoremap n nzz
 nnoremap N Nzz
 nnoremap J gJ
-nnoremap <F6> :SignifyToggle<cr>
+nnoremap <F6> :GitGutterToggle<cr>
 nnoremap <F7> :set expandtab!<cr>
 inoremap <F9> <esc>:TlistToggle<cr>
 nnoremap <F9> :TlistToggle<cr>
@@ -155,6 +158,5 @@ let g:plug_window='tabnew'
 let NERDTreeShowHidden=1
 " vimchat
 let g:vimchat_timestampformat="[%d.%m.%y %H:%M:%S]"
-" signify
-nmap [c <Plug>(signify-prev-hunk)zz
-nmap ]c <Plug>(signify-next-hunk)zz
+let g:vimchat_log_file_format="%(d)s"
+let g:vimchat_show_jid_resource=0

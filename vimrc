@@ -160,3 +160,6 @@ let NERDTreeShowHidden=1
 let g:vimchat_timestampformat="[%d.%m.%y %H:%M:%S]"
 let g:vimchat_log_file_format="%(d)s"
 let g:vimchat_show_jid_resource=0
+
+let g:pymode_rope_complete_on_dot=0
+let g:pymode_trim_whitespaces=0

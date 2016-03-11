@@ -9,25 +9,25 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
 Plug 'junegunn/seoul256.vim'
-Plug 'junegunn/vim-easy-align'
-Plug 'junegunn/vim-peekaboo'
+Plug 'junegunn/vim-easy-align', { 'on': '<Plug>(EasyAlign)' }
+"Plug 'junegunn/vim-peekaboo'
 Plug 'junegunn/gv.vim'
-Plug 'junegunn/fzf', { 'on': 'FZF', 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vim-pseudocl'
-Plug 'junegunn/vim-oblique'
+"Plug 'junegunn/fzf', { 'on': 'FZF', 'dir': '~/.fzf', 'do': './install --all' }
+"Plug 'junegunn/fzf.vim'
+"Plug 'junegunn/vim-pseudocl'
+"Plug 'junegunn/vim-oblique'
 "Plug 'mhinz/vim-signify'
-Plug 'mhinz/vim-startify'
+"Plug 'mhinz/vim-startify'
 Plug 'bling/vim-airline'
-Plug 'MattesGroeger/vim-bookmarks'
+"Plug 'MattesGroeger/vim-bookmarks'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'easymotion/vim-easymotion'
+"Plug 'easymotion/vim-easymotion'
 Plug 'rhysd/committia.vim'
-Plug 'vim-scripts/taglist.vim', { 'on': 'TlistToggle' }
-Plug 'klen/python-mode'
-Plug 'airblade/vim-rooter'
-Plug 'airblade/vim-helptab'
+"Plug 'vim-scripts/taglist.vim', { 'on': 'TlistToggle' }
+Plug 'klen/python-mode', { 'for': 'python' }
+Plug 'wookiehangover/jshint.vim', { 'for': 'javascript' }
+"Plug 'airblade/vim-rooter'
 Plug 'airblade/vim-gitgutter'
 
 call plug#end()
@@ -83,6 +83,9 @@ if version > 730
     augroup END
 endif
 
+""" commands
+command! W write
+
 """ keys mapping
 nnoremap n nzz
 nnoremap N Nzz
@@ -134,32 +137,36 @@ if version >= 700
 endif
 
 """ custom plugins settings
+
 " vim-startify
-let g:startify_bookmarks = [
-    \ {'c': '~/.vimrc'},
-    \ {'g': '~/git/'},
-\ ]
-let g:startify_list_order = [
-    \ ['   Sessions'],      'sessions',
-    \ ['   MRU'],           'files',
-    \ ['   MRU '.getcwd()], 'dir',
-    \ ['   Bookmarks'],     'bookmarks',
-  \ ]
-let g:startify_session_delete_buffers = 1
-let g:startify_session_persistence = 1
+"let g:startify_bookmarks = [
+    "\ {'c': '~/.vimrc'},
+    "\ {'g': '~/git/'},
+"\ ]
+"let g:startify_list_order = [
+    "\ ['   Sessions'],      'sessions',
+    "\ ['   MRU'],           'files',
+    "\ ['   MRU '.getcwd()], 'dir',
+    "\ ['   Bookmarks'],     'bookmarks',
+  "\ ]
+"let g:startify_session_delete_buffers = 1
+"let g:startify_session_persistence = 1
 " vim-peekaboo
-let g:peekaboo_window = 'vertical botright 100new'
-let g:peekaboo_delay = 0
+"let g:peekaboo_window = 'vertical botright 100new'
+"let g:peekaboo_delay = 0
 " vim-easy-align
 vmap <Enter> <Plug>(EasyAlign)
 " new tab for vim-plug
-let g:plug_window='tabnew'
+let g:plug_window = 'tabnew'
 " nerdtree
-let NERDTreeShowHidden=1
+let NERDTreeShowHidden = 1
 " vimchat
-let g:vimchat_timestampformat="[%d.%m.%y %H:%M:%S]"
-let g:vimchat_log_file_format="%(d)s"
-let g:vimchat_show_jid_resource=0
-
-let g:pymode_rope_complete_on_dot=0
-let g:pymode_trim_whitespaces=0
+"let g:vimchat_timestampformat="[%d.%m.%y %H:%M:%S]"
+"let g:vimchat_log_file_format="%(d)s"
+"let g:vimchat_show_jid_resource=0
+" jshint
+let JSHintUpdateWriteOnly = 1
+let g:JSHintHighlightErrorLine = 0
+" pymode
+let g:pymode_rope_complete_on_dot = 0
+let g:pymode_trim_whitespaces = 0

@@ -1,10 +1,13 @@
 # set prompt
 export PS1="[\u@\h \w]$ "
 
+umask 0002
+
 # aliases
 alias ll='ls -la --color=auto'
 alias greps='grep -srni --color'
 alias glb='git lg --no-merges master..'
+alias gsfm='git lg ^master HEAD'
 alias pylint='pylint --rcfile=~/.pylintrc -r n'
 
 if [ -f "$HOME/.custom_aliases.sh" ]; then
@@ -44,3 +47,7 @@ fi
 trap 'test -n "$SSH_AGENT_PID" && eval `/usr/bin/ssh-agent -k`' 0
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+if [ -f "$HOME/.bashrc.custom" ]; then
+    source $HOME/.bashrc.custom
+fi

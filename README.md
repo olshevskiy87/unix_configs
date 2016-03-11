@@ -1,18 +1,19 @@
-# unix_configs
+# unix\_configs
 - profile
 - bashrc
 - gitconfig
 - vimrc
-- vim/*
+- vim/\*
 - psqlrc
 - tmux.conf
 - pylintrc
+- jshintrc
 
 # git submodules
 - https://github.com/wwalker/ssh-find-agent.git
 - https://github.com/junegunn/vim-plug.git
 
-## manage_vim_plugins.pl
+## manage\_vim\_plugins.pl
 Stupid vim plugins manager.
 
 Usage:
@@ -37,7 +38,7 @@ Perl-modules required:
 - File::Path
 - English
 
-## update_vim_plugins.sh
+## update\_vim\_plugins.sh
 Dumb vim plugins updater.
 
 Usage:

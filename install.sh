@@ -1,4 +1,4 @@
-dotfiles="profile bashrc vimrc psqlrc gitconfig tmux.conf pylintrc"
+dotfiles="profile bashrc vimrc psqlrc gitconfig tmux.conf pylintrc jshintrc"
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}"i)" && pwd)"
 
 function create_or_update_file {

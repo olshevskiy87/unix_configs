@@ -46,3 +46,6 @@ do
         ln -s $DIR/$f ~/$dot_f
     fi
 done
+
+# install vim-plugins
+vim +PlugInstall +qall!

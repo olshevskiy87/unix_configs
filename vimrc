@@ -48,7 +48,7 @@ if version >= 700
     syntax enable
 endif
 set t_Co=256
-colorscheme seoul256
+try | colorscheme seoul256 | catch | endtry
 
 if exists('+colorcolumn')
     highlight ColorColumn ctermbg=235 guibg=#2c2d27

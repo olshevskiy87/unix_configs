@@ -8,6 +8,7 @@ alias ll='ls -la --color=auto'
 alias greps='grep -srni --color'
 alias glb='git lg --no-merges master..'
 alias gsfm='git lg ^master HEAD'
+alias vlg='vim -p $(git show --pretty="format:" --name-only)'
 alias pylint='pylint --rcfile=~/.pylintrc -r n'
 
 if [ -f "$HOME/.custom_aliases.sh" ]; then

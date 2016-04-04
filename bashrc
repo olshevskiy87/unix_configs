@@ -3,11 +3,19 @@ export PS1="[\u@\h \w]$ "
 
 umask 0002
 
+if [ -d "$HOME/bin" ]; then
+    PATH="$HOME/bin:$PATH"
+fi
+
 # aliases
 alias ll='ls -la --color=auto'
 alias greps='grep -srni --color'
 alias glb='git lg --no-merges master..'
 alias gsfm='git lg ^master HEAD'
+icdiff > /dev/null 2>&1
+if [ "$?" -eq "0" ]; then
+   alias gic='git difftool -y --extcmd icdiff'
+fi
 alias vlg='vim -p $(git show --pretty="format:" --name-only)'
 alias pylint='pylint --rcfile=~/.pylintrc -r n'
 
@@ -27,10 +35,6 @@ fi
 if which psql &> /dev/null; then
     export PGUSER=postgres
     export PGDATABASE=postgres
-fi
-
-if [ -d "$HOME/bin" ]; then
-    PATH="$HOME/bin:$PATH"
 fi
 
 # start ssh-agent if it's not already running

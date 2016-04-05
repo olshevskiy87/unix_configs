@@ -1,6 +1,8 @@
 dotfiles="profile bashrc vimrc psqlrc gitconfig tmux.conf pylintrc jshintrc"
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}"i)" && pwd)"
 
+mkdir -p ~/bin
+
 function create_or_update_file {
     if [ ! -d $1 ]; then
         echo "$1 folder doesn't exist. make it..."
@@ -28,6 +30,9 @@ create_or_update_file ~/.vim/autoload plug.vim vim-plug
 
 # ssh-find-agent
 create_or_update_file ~ ssh-find-agent.sh ssh-find-agent
+
+# icdiff
+ln -sf $DIR/icdiff/icdiff ~/bin/icdiff
 
 # dot-files in HOME dir
 for f in $dotfiles

@@ -15,6 +15,7 @@ alias gsfm='git lg ^master HEAD'
 icdiff > /dev/null 2>&1
 if [ "$?" -eq "0" ]; then
    alias gic='git difftool -y --extcmd icdiff'
+   alias gicl='git difftool -y --extcmd icdiff --color=always | less -R'
 fi
 alias vlg='vim -p $(git show --pretty="format:" --name-only)'
 alias pylint='pylint --rcfile=~/.pylintrc -r n'

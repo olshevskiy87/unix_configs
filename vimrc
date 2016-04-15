@@ -29,6 +29,7 @@ Plug 'klen/python-mode', { 'for': 'python' }
 Plug 'wookiehangover/jshint.vim', { 'for': 'javascript' }
 "Plug 'airblade/vim-rooter'
 Plug 'airblade/vim-gitgutter'
+Plug 'kopischke/vim-stay'
 
 call plug#end()
 

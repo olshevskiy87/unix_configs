@@ -170,3 +170,25 @@ let g:JSHintHighlightErrorLine = 0
 " pymode
 let g:pymode_rope_complete_on_dot = 0
 let g:pymode_trim_whitespaces = 0
+
+" edit-open hook for commitia
+let g:committia_hooks = {}
+function! g:committia_hooks.edit_open(info)
+    " If no commit message, start with insert mode
+    if a:info.vcs ==# 'git'
+        let git_dir = fugitive#extract_git_dir(expand('%:p'))
+        let git_repo = fugitive#repo(git_dir)
+        let opts = [
+            \ '-3',
+            \ '--date=format:%d.%m.%Y %H:%M',
+            \ '--format=%cd  %s',
+            \ '--no-merges'
+        \ ]
+        let git_args = ['log'] + opts
+        let git_log_cmd = call(git_repo.git_command, git_args, git_repo)
+        silent execute 'read' escape('!'.git_log_cmd, '%')
+        silent 2,$s/^/# /g
+        normal gg
+        call append('.', '')
+    end
+endfunction

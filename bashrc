@@ -18,6 +18,7 @@ if [ "$?" -eq "0" ]; then
    alias gicl='git difftool -y --extcmd icdiff --color=always | less -R'
 fi
 alias vlg='vim -p $(git show --pretty="format:" --name-only)'
+alias vsg='vim -p $(git status -s | awk '"'"'{print $2}'"'"')'
 alias pylint='pylint --rcfile=~/.pylintrc -r n'
 
 if [ -f "$HOME/.custom_aliases.sh" ]; then
@@ -56,4 +57,7 @@ trap 'test -n "$SSH_AGENT_PID" && eval `/usr/bin/ssh-agent -k`' 0
 
 if [ -f "$HOME/.bashrc.custom" ]; then
     source $HOME/.bashrc.custom
+fi
+if [ -f "$HOME/.git-completion.bash" ]; then
+    source $HOME/.git-completion.bash
 fi

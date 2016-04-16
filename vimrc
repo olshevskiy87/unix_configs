@@ -11,7 +11,7 @@ Plug 'tpope/vim-repeat'
 Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/vim-easy-align', { 'on': '<Plug>(EasyAlign)' }
 "Plug 'junegunn/vim-peekaboo'
-Plug 'junegunn/gv.vim'
+Plug 'junegunn/gv.vim', { 'on': 'GV' }
 "Plug 'junegunn/fzf', { 'on': 'FZF', 'dir': '~/.fzf', 'do': './install --all' }
 "Plug 'junegunn/fzf.vim'
 "Plug 'junegunn/vim-pseudocl'

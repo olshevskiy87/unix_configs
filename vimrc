@@ -183,13 +183,14 @@ function! g:committia_hooks.edit_open(info)
     let opts = [
         \ '-3',
         \ '--date=format:%d.%m.%Y %H:%M',
-        \ '--format=%cd  %s',
+        \ '--format=%cd  %s (%cn)',
         \ '--no-merges'
     \ ]
     let git_args = ['log'] + opts
     let git_log_cmd = call(git_repo.git_command, git_args, git_repo)
-    silent execute 'read' escape('!'.git_log_cmd, '%')
-    silent 2,$s/^/# /g
     normal gg
+    let log = map(split(system(git_log_cmd), '\n'), "'# '.v:val")
+    silent 0put =log
     call append('.', '')
+    normal 2j
 endfunction

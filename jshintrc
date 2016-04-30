@@ -2,5 +2,6 @@
     "laxbreak": true,
     "laxcomma": true,
     "expr": true,
-    "moz": true
+    "moz": true,
+    "node": true
 }

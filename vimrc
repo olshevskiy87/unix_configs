@@ -18,7 +18,7 @@ Plug 'junegunn/gv.vim', { 'on': 'GV' }
 "Plug 'junegunn/vim-oblique'
 "Plug 'mhinz/vim-signify'
 "Plug 'mhinz/vim-startify'
-Plug 'bling/vim-airline'
+"Plug 'bling/vim-airline'
 "Plug 'MattesGroeger/vim-bookmarks'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -41,6 +41,7 @@ set showcmd
 set backspace=indent,eol,start
 set scrolloff=10
 set laststatus=2
+set statusline=%F\ %m\ %r\ %=[%{&ff}]\ %3p%%\ [%4l,%3v]\ [%L]
 set clipboard=unnamed
 set nofoldenable
 

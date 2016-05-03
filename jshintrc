@@ -3,5 +3,6 @@
     "laxcomma": true,
     "expr": true,
     "moz": true,
-    "node": true
+    "node": true,
+    "maxerr": 1000
 }

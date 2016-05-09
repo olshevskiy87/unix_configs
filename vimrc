@@ -92,6 +92,7 @@ command! W write
 nnoremap n nzz
 nnoremap N Nzz
 nnoremap J gJ
+nnoremap 0 ^
 nnoremap <F6> :GitGutterToggle<cr>
 nnoremap <F7> :set expandtab!<cr>
 inoremap <F9> <esc>:TlistToggle<cr>

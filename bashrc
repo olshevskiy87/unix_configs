@@ -41,7 +41,7 @@ fi
 
 # start ssh-agent if it's not already running
 if [ ! "`ps ax | grep ssh-agent | grep -ivE \"(grep|defunct)\"`" ]; then
-    eval $(ssh-agent)
+    eval $(ssh-agent) > /dev/null 2>&1
 fi
 
 # include script to find running ssh-agent

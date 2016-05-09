@@ -30,6 +30,8 @@ Plug 'wookiehangover/jshint.vim', { 'for': 'javascript' }
 "Plug 'airblade/vim-rooter'
 Plug 'airblade/vim-gitgutter'
 Plug 'kopischke/vim-stay'
+"Plug 'diepm/vim-rest-console'
+"Plug 'takac/vim-hardtime'
 
 call plug#end()
 

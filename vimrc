@@ -175,6 +175,8 @@ let g:JSHintHighlightErrorLine = 0
 " pymode
 let g:pymode_rope_complete_on_dot = 0
 let g:pymode_trim_whitespaces = 0
+let g:pymode_lint_ignore = "W191"
+let g:pymode_lint_sort = ['E', 'C', 'I']
 
 " edit-open hook for commitia
 let g:committia_hooks = {}

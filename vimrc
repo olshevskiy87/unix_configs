@@ -26,13 +26,13 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'rhysd/committia.vim'
 "Plug 'vim-scripts/taglist.vim', { 'on': 'TlistToggle' }
 Plug 'klen/python-mode', { 'for': 'python' }
-"Plug 'wookiehangover/jshint.vim', { 'for': 'javascript' }
-Plug 'olshevskiy87/jshint.vim', { 'for': 'javascript', 'branch': 'fix_upd_wr_only' }
+Plug 'olshevskiy87/jshint.vim', { 'for': 'javascript' }
 "Plug 'airblade/vim-rooter'
 Plug 'airblade/vim-gitgutter'
 Plug 'kopischke/vim-stay'
 "Plug 'diepm/vim-rest-console'
 "Plug 'takac/vim-hardtime'
+Plug 'andreshazard/vim-logreview'
 
 call plug#end()
 

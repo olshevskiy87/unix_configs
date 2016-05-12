@@ -47,6 +47,7 @@ set laststatus=2
 set statusline=%F\ %m\ %r\ %=[%{&ff}]\ %3p%%\ [%4l,%3v]\ [%L]
 set clipboard=unnamed
 set nofoldenable
+set sidescroll=5
 
 """ colors
 if version >= 700

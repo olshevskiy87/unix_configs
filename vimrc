@@ -199,6 +199,7 @@ function! g:committia_hooks.edit_open(info)
     normal gg
     let log = map(split(system(git_log_cmd), '\n'), "'# '.v:val")
     silent 0put =log
-    call append('.', '')
-    normal 2j
+    normal 1j
+    let cur_branch = fugitive#head()
+    silent .put =cur_branch
 endfunction

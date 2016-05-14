@@ -25,7 +25,9 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 "Plug 'easymotion/vim-easymotion'
 Plug 'rhysd/committia.vim'
 "Plug 'vim-scripts/taglist.vim', { 'on': 'TlistToggle' }
-Plug 'klen/python-mode', { 'for': 'python' }
+if has('python') || has('python3')
+    Plug 'klen/python-mode', { 'for': 'python' }
+endif
 Plug 'olshevskiy87/jshint.vim', { 'for': 'javascript' }
 "Plug 'airblade/vim-rooter'
 Plug 'airblade/vim-gitgutter'

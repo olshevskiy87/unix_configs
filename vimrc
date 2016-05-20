@@ -50,6 +50,8 @@ set statusline=%F\ %m\ %r\ %=[%{&ff}]\ %3p%%\ [%4l,%3v]\ [%L]
 set clipboard=unnamed
 set nofoldenable
 set sidescroll=5
+set nonumber
+set norelativenumber
 
 """ colors
 if version >= 700
@@ -60,7 +62,7 @@ try | colorscheme seoul256 | catch | endtry
 
 if exists('+colorcolumn')
     highlight ColorColumn ctermbg=235 guibg=#2c2d27
-    let &colorcolumn="80"
+    let &colorcolumn="100"
 endif
 
 " indentation

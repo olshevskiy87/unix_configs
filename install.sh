@@ -53,4 +53,11 @@ do
 done
 
 # install vim-plugins
-vim +PlugClean +PlugUpdate +PlugInstall +qall!
+
+read -p "update vim plugins? " -n 1 -r
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    vim +PlugClean +PlugUpdate +PlugInstall +qall!
+    echo " ok"
+else
+    echo
+fi

@@ -53,4 +53,4 @@ do
 done
 
 # install vim-plugins
-vim +PlugInstall +qall!
+vim +PlugClean +PlugUpdate +PlugInstall +qall!

@@ -207,3 +207,7 @@ function! g:committia_hooks.edit_open(info)
     let cur_branch = fugitive#head()
     silent .put =cur_branch
 endfunction
+
+vnoremap <silent> <Leader>jp :<C-U>call myf#JsonPrettyVisual()<CR>
+nnoremap <silent> <Leader>jp :call myf#JsonPretty()<CR>
+nnoremap <silent> <Leader>pm :call myf#PhpMdCheck()<CR>

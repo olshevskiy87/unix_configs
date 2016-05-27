@@ -35,6 +35,7 @@ Plug 'kopischke/vim-stay'
 "Plug 'diepm/vim-rest-console'
 "Plug 'takac/vim-hardtime'
 Plug 'andreshazard/vim-logreview'
+Plug 'tkhoa2711/vim-togglenumber'
 
 call plug#end()
 
@@ -101,6 +102,7 @@ nnoremap n nzz
 nnoremap N Nzz
 nnoremap J gJ
 nnoremap 0 ^
+nnoremap <F3> :ToggleNumber<cr>
 nnoremap <F6> :GitGutterToggle<cr>
 nnoremap <F7> :set expandtab!<cr>
 inoremap <F9> <esc>:TlistToggle<cr>

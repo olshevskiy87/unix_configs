@@ -12,6 +12,7 @@
 # git submodules
 - https://github.com/wwalker/ssh-find-agent.git
 - https://github.com/junegunn/vim-plug.git
+- https://github.com/jeffkaufman/icdiff
 
 ## manage\_vim\_plugins.pl
 Stupid vim plugins manager.

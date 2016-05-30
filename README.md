@@ -1,51 +1,18 @@
-# unix\_configs
+unix\_configs
+-------------
+
 - profile
 - bashrc
 - gitconfig
 - vimrc
-- vim/\*
 - psqlrc
 - tmux.conf
 - pylintrc
 - jshintrc
 
-# git submodules
-- https://github.com/wwalker/ssh-find-agent.git
-- https://github.com/junegunn/vim-plug.git
-- https://github.com/jeffkaufman/icdiff
+git submodules
+--------------
 
-## manage\_vim\_plugins.pl
-Stupid vim plugins manager.
-
-Usage:
-```
-perl manage_vim_plugins.pl [OPTIONS]
-```
-Options:
-```
---bundle_path=PATH  vim bundles path (default: '~/.vim/bundle')
---plugins=FILENAME  path to the json-file with required plugins (default: 'plugins.json')
---update            update plugin if already exist
--? | --help         show this help, then exit
-```
-
-Perl-modules required:
-- JSON::Parse
-- Getopt::Long
-- IPC::Cmd
-- File::Spec
-- File::HomeDir
-- File::chdir
-- File::Path
-- English
-
-## update\_vim\_plugins.sh
-Dumb vim plugins updater.
-
-Usage:
-Just edit plugins.list using template <name>|<url>|<enabled:0|1>
-and run
-```
-./update_vim_plugins.sh
-```
-Default bundle path is ~/.vim/bundle.
+- [ssh-find-agent](https://github.com/wwalker/ssh-find-agent.git)
+- [vim-plug](https://github.com/junegunn/vim-plug.git)
+- [icdiff](https://github.com/jeffkaufman/icdiff)

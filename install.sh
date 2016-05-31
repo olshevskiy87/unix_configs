@@ -59,7 +59,7 @@ done
 
 read -p "update vim plugins? " -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-    vim +PlugClean +PlugUpdate +PlugInstall +qall!
+    vim +PlugUpgrade +PlugClean +PlugUpdate +PlugInstall +qall!
     echo " ok"
 else
     echo

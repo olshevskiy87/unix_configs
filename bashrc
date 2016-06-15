@@ -12,6 +12,8 @@ alias ll='ls -la --color=auto'
 alias greps='grep -srni --color'
 alias glb='git lg --no-merges master..'
 alias gsfm='git lg ^master HEAD'
+alias gbra='list_git_branches_annotated'
+alias gbrd='git branch --edit-description '
 icdiff > /dev/null 2>&1
 if [ "$?" -eq "0" ]; then
    alias gic='git difftool -y --extcmd icdiff'
@@ -20,6 +22,29 @@ fi
 alias vlg='vim -p $(git show --pretty="format:" --name-only)'
 alias vsg='vim -p $(git status -s | awk '"'"'{print $2}'"'"')'
 alias pylint='pylint --rcfile=~/.pylintrc -r n'
+
+function list_git_branches_annotated {
+    oIFS="$IFS"
+    IFS=$'\n'
+    cur_br=$(git br 2>/dev/null | grep '*' | cut -b 3-);
+    if [ ! "$cur_br" ]; then
+        echo "err: not a git repository"
+        return 1
+    fi
+    for br in $(git br | cut -b 3-); do
+        desc=$(git config branch.$br.description | head -n1)
+        if [ "$br" == "$cur_br" ]; then
+            br_f="* %-12s"
+        else
+            br_f="  %-12s"
+        fi
+        if [ "$desc" ]; then
+            br_f="$br_f :"
+        fi
+        printf "$br_f %s\n" "$br" "$desc"
+    done
+    IFS="$oIFS"
+}
 
 if [ -f "$HOME/.custom_aliases.sh" ]; then
     source "$HOME/.custom_aliases.sh"

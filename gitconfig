@@ -31,6 +31,7 @@
     untracked = cyan
 [diff]
     tool = vimdiff              # vim as default diff tool
+    compactionHeuristic = true
 [merge]
     tool = vimdiff
 [include]

@@ -2,7 +2,11 @@ if version >= 700
     filetype plugin indent on
 endif
 
-call plug#begin('~/.vim/plugged')
+if has('nvim')
+    call plug#begin('~/.config/nvim/plugged')
+else
+    call plug#begin('~/.vim/plugged')
+endif
 
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'

@@ -23,8 +23,10 @@ git checkout master
 git pull
 make distclean
 make configure
-make
-sudo make install
+./configure
+# sudo apt-get install curl, asciidoc, docbook2x, libcurl4-gnutls-dev
+make all doc info
+sudo make install install-doc install-html install-info
 if [ -f "contrib/completion/git-completion.bash" ]; then
     cp -f contrib/completion/git-completion.bash "$HOME/.git-completion.bash"
 fi

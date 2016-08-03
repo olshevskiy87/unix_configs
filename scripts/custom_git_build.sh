@@ -1,14 +1,11 @@
 #!/usr/bin/env bash
 
-PWD=$(pwd)
-
 if [ ! -d "$1" ]; then
     echo "err: \"$1\" is not a directory"
     exit 1
 fi
 
-cd "$1"
-pwd
+pushd "$1"
 
 read -p "reset and build this repository? " -n 1 -r
 if [[ ! $REPLY =~ ^[Yy]$ ]]; then
@@ -31,7 +28,7 @@ if [ -f "contrib/completion/git-completion.bash" ]; then
     cp -f contrib/completion/git-completion.bash "$HOME/.git-completion.bash"
 fi
 
-cd $PWD
+popd
 
 echo
 echo the new git version is: $(git --version | awk '{print $3}')

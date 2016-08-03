@@ -6,6 +6,10 @@ umask 0002
 if [ -d "$HOME/bin" ]; then
     PATH="$HOME/bin:$PATH"
 fi
+export GOPATH=$HOME/go
+if [ -d "$HOME/go/bin" ]; then
+    PATH="$HOME/go/bin:$PATH"
+fi
 
 # aliases
 alias ll='ls -la --color=auto'

@@ -40,6 +40,7 @@ Plug 'kopischke/vim-stay'
 "Plug 'takac/vim-hardtime'
 Plug 'andreshazard/vim-logreview'
 Plug 'tkhoa2711/vim-togglenumber'
+Plug 'fatih/vim-go'
 
 call plug#end()
 

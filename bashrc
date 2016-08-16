@@ -51,6 +51,54 @@ function list_git_branches_annotated {
     IFS="$oIFS"
 }
 
+# activate python virtual environment
+function act {
+    activated=false
+    env_folder="env"
+    if [ "$1" ]; then
+        env_folder="$1"
+    fi
+    full_env=$(readlink -f $env_folder)
+    [[ "$VIRTUAL_ENV" = "$full_env" ]] && activated=true
+
+    if [ "$2" ]; then
+        case "$2" in
+            "new")
+                if [ -d "$env_folder" ]; then
+                    echo "$full_env already exist"
+                    return 1
+                fi
+                virtualenv "$env_folder"
+                ;;
+            "re")
+                if [ ! -d "$env_folder" ]; then
+                    echo "$full_env does not exist"
+                else
+                    read -p "do you really want to remove $full_env? " -n 1 -r
+                    if [[ $REPLY =~ ^[Yy]$ ]]; then
+                        rm -rf "$env_folder"
+                    else
+                        return 1
+                    fi
+                    echo
+                fi
+                virtualenv "$env_folder"
+                ;;
+            *)
+                echo "unknown command \"$2\""
+                return 1
+                ;;
+        esac
+    fi
+
+    activate_path="$env_folder/bin/activate"
+    if [ ! -f "$activate_path" ]; then
+        echo "$activate_path does not exist"
+        return 1
+    fi
+    source "$activate_path"
+}
+
 if [ -f "$HOME/.custom_aliases.sh" ]; then
     source "$HOME/.custom_aliases.sh"
 fi

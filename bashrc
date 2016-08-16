@@ -18,6 +18,7 @@ alias glb='git lg --no-merges master..'
 alias gsfm='git lg ^master HEAD'
 alias gbra='list_git_branches_annotated'
 alias gbrd='git branch --edit-description '
+alias grm='git rebase master'
 icdiff > /dev/null 2>&1
 if [ "$?" -eq "0" ]; then
    alias gic='git difftool -y --extcmd icdiff'

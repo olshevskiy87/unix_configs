@@ -201,9 +201,15 @@ function! g:committia_hooks.edit_open(info)
     end
     let git_dir = fugitive#extract_git_dir(expand('%:p'))
     let git_repo = fugitive#repo(git_dir)
+
+    let git_log_date_fmt = 'format:%d.%m.%Y %H:%M'
+    if fugitive#git_version() =~# '^0\|^1\.\|^2\.[1-6]\.'
+        let git_log_date_fmt = 'iso'
+    endif
+
     let opts = [
         \ '-3',
-        \ '--date=format:%d.%m.%Y %H:%M',
+        \ '--date=' . git_log_date_fmt,
         \ '--format=%cd  %s (%cn)',
         \ '--no-merges'
     \ ]

@@ -201,6 +201,7 @@ function! g:committia_hooks.edit_open(info)
     end
     let git_dir = fugitive#extract_git_dir(expand('%:p'))
     let git_repo = fugitive#repo(git_dir)
+    let git_repo_user = git_repo.config('user.name').' <'.git_repo.config('user.email').'>'
 
     let git_log_date_fmt = 'format:%d.%m.%Y %H:%M'
     if fugitive#git_version() =~# '^0\|^1\.\|^2\.[1-6]\.'
@@ -216,8 +217,9 @@ function! g:committia_hooks.edit_open(info)
     let git_args = ['log'] + opts
     let git_log_cmd = call(git_repo.git_command, git_args, git_repo)
     normal gg
-    let log = map(split(system(git_log_cmd), '\n'), "'# '.v:val")
-    silent 0put =log
+    let head_comment = map(split(system(git_log_cmd), '\n'), "'# '.v:val")
+        \ + ["\n# as " . git_repo_user . "\n"]
+    silent 0put =head_comment
     normal 1j
     let cur_branch = fugitive#head()
     silent .put =cur_branch

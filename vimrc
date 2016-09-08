@@ -56,7 +56,7 @@ set statusline=%F\ %m\ %r\ %=[%{&ff}]\ %3p%%\ [%4l,%3v]\ [%L]
 set clipboard=unnamed
 set nofoldenable
 set sidescroll=5
-set nonumber
+set number
 set norelativenumber
 
 """ colors

@@ -140,3 +140,6 @@ fi
 if [ -f "$HOME/.git-completion.bash" ]; then
     source $HOME/.git-completion.bash
 fi
+
+# travis cli completions
+[ -f /home/dv/.travis/travis.sh ] && source /home/dv/.travis/travis.sh

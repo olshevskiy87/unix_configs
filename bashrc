@@ -24,6 +24,7 @@ fi
 alias vlg='vim -p $(git show --pretty="format:" --name-only)'
 alias vsg='vim -p $(git status -s | awk '"'"'{print $2}'"'"')'
 alias pylint='pylint --rcfile=~/.pylintrc -r n'
+alias ipython='ipython --profile=dv'
 
 function list_git_branches_annotated {
     oIFS="$IFS"
@@ -135,4 +136,7 @@ if [ -f "$HOME/.bashrc.custom" ]; then
 fi
 if [ -f "$HOME/.git-completion.bash" ]; then
     source $HOME/.git-completion.bash
+fi
+if [ -f /etc/bash_completion ]; then
+    source /etc/bash_completion
 fi

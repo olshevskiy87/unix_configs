@@ -25,22 +25,19 @@ Plug 'junegunn/gv.vim', { 'on': 'GV' }
 "Plug 'bling/vim-airline'
 "Plug 'MattesGroeger/vim-bookmarks'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 "Plug 'easymotion/vim-easymotion'
 Plug 'rhysd/committia.vim'
 "Plug 'vim-scripts/taglist.vim', { 'on': 'TlistToggle' }
 if has('python') || has('python3')
     Plug 'klen/python-mode', { 'for': 'python' }
 endif
-Plug 'olshevskiy87/jshint.vim', { 'for': 'javascript' }
+Plug 'jshint/jshint.vim', { 'for': 'javascript' }
 "Plug 'airblade/vim-rooter'
 Plug 'airblade/vim-gitgutter'
 Plug 'kopischke/vim-stay'
 "Plug 'diepm/vim-rest-console'
 "Plug 'takac/vim-hardtime'
-Plug 'andreshazard/vim-logreview'
 Plug 'tkhoa2711/vim-togglenumber'
-Plug 'fatih/vim-go'
 
 call plug#end()
 

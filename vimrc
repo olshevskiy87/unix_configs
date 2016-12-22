@@ -31,7 +31,7 @@ Plug 'rhysd/committia.vim'
 if has('python') || has('python3')
     Plug 'klen/python-mode', { 'for': 'python' }
 endif
-Plug 'jshint/jshint.vim', { 'for': 'javascript' }
+Plug 'Shutnik/jshint2.vim', { 'for': 'javascript' }
 "Plug 'airblade/vim-rooter'
 Plug 'airblade/vim-gitgutter'
 Plug 'kopischke/vim-stay'

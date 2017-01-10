@@ -1,5 +1,5 @@
 [alias]
-    st = status -s              # short mode for status
+    st = status -s -b           # short mode for status
     br = branch
     co = checkout
     cb = checkout -b

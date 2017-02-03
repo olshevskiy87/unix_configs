@@ -14,29 +14,20 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
 Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/vim-easy-align', { 'on': '<Plug>(EasyAlign)' }
-"Plug 'junegunn/vim-peekaboo'
 Plug 'junegunn/gv.vim', { 'on': 'GV' }
 "Plug 'junegunn/fzf', { 'on': 'FZF', 'dir': '~/.fzf', 'do': './install --all' }
 "Plug 'junegunn/fzf.vim'
-"Plug 'junegunn/vim-pseudocl'
-"Plug 'junegunn/vim-oblique'
-"Plug 'mhinz/vim-signify'
-"Plug 'mhinz/vim-startify'
 "Plug 'bling/vim-airline'
 "Plug 'MattesGroeger/vim-bookmarks'
 Plug 'scrooloose/nerdcommenter'
 "Plug 'easymotion/vim-easymotion'
 Plug 'rhysd/committia.vim'
-"Plug 'vim-scripts/taglist.vim', { 'on': 'TlistToggle' }
 if has('python') || has('python3')
     Plug 'klen/python-mode', { 'for': 'python' }
 endif
 Plug 'Shutnik/jshint2.vim', { 'for': 'javascript' }
-"Plug 'airblade/vim-rooter'
 Plug 'airblade/vim-gitgutter'
 Plug 'kopischke/vim-stay'
-"Plug 'diepm/vim-rest-console'
-"Plug 'takac/vim-hardtime'
 Plug 'tkhoa2711/vim-togglenumber'
 
 call plug#end()
@@ -151,30 +142,10 @@ endif
 
 """ custom plugins settings
 
-" vim-startify
-"let g:startify_bookmarks = [
-    "\ {'c': '~/.vimrc'},
-    "\ {'g': '~/git/'},
-"\ ]
-"let g:startify_list_order = [
-    "\ ['   Sessions'],      'sessions',
-    "\ ['   MRU'],           'files',
-    "\ ['   MRU '.getcwd()], 'dir',
-    "\ ['   Bookmarks'],     'bookmarks',
-  "\ ]
-"let g:startify_session_delete_buffers = 1
-"let g:startify_session_persistence = 1
-" vim-peekaboo
-"let g:peekaboo_window = 'vertical botright 100new'
-"let g:peekaboo_delay = 0
 " vim-easy-align
 vmap <Enter> <Plug>(EasyAlign)
 " new tab for vim-plug
 let g:plug_window = 'tabnew'
-" vimchat
-"let g:vimchat_timestampformat="[%d.%m.%y %H:%M:%S]"
-"let g:vimchat_log_file_format="%(d)s"
-"let g:vimchat_show_jid_resource=0
 " jshint
 let JSHintUpdateWriteOnly = 1
 let g:JSHintHighlightErrorLine = 0

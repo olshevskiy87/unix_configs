@@ -109,8 +109,6 @@ nnoremap <F6> :GitGutterToggle<cr>
 nnoremap <F7> :set expandtab!<cr>
 inoremap <F9> <esc>:TlistToggle<cr>
 nnoremap <F9> :TlistToggle<cr>
-inoremap <F10> <esc>:NERDTreeToggle<cr>
-nnoremap <F10> :NERDTreeToggle<cr>
 nnoremap <F12> :Startify<CR>
 
 " hide highlighting of the search results by pressing Enter
@@ -173,8 +171,6 @@ endif
 vmap <Enter> <Plug>(EasyAlign)
 " new tab for vim-plug
 let g:plug_window = 'tabnew'
-" nerdtree
-let NERDTreeShowHidden = 1
 " vimchat
 "let g:vimchat_timestampformat="[%d.%m.%y %H:%M:%S]"
 "let g:vimchat_log_file_format="%(d)s"

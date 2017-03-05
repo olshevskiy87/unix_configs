@@ -185,8 +185,7 @@ function! g:committia_hooks.edit_open(info)
         \ + ["\n# as " . git_repo_user . "\n"]
     silent 0put =head_comment
     normal 1j
-    let cur_branch = fugitive#head()
-    silent .put =cur_branch
+    silent .put =fugitive#head()
 endfunction
 
 vnoremap <silent> <Leader>jp :<C-U>call myf#JsonPrettyVisual()<CR>

@@ -15,12 +15,7 @@ Plug 'tpope/vim-repeat'
 Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/vim-easy-align', { 'on': '<Plug>(EasyAlign)' }
 Plug 'junegunn/gv.vim', { 'on': 'GV' }
-"Plug 'junegunn/fzf', { 'on': 'FZF', 'dir': '~/.fzf', 'do': './install --all' }
-"Plug 'junegunn/fzf.vim'
-"Plug 'bling/vim-airline'
-"Plug 'MattesGroeger/vim-bookmarks'
 Plug 'scrooloose/nerdcommenter'
-"Plug 'easymotion/vim-easymotion'
 Plug 'rhysd/committia.vim'
 if has('python') || has('python3')
     Plug 'klen/python-mode', { 'for': 'python' }
@@ -98,9 +93,6 @@ nnoremap 0 ^
 nnoremap <F3> :ToggleNumber<cr>
 nnoremap <F6> :GitGutterToggle<cr>
 nnoremap <F7> :set expandtab!<cr>
-inoremap <F9> <esc>:TlistToggle<cr>
-nnoremap <F9> :TlistToggle<cr>
-nnoremap <F12> :Startify<CR>
 
 " hide highlighting of the search results by pressing Enter
 nnoremap <Tab> :noh<CR>

@@ -85,6 +85,7 @@ endif
 
 """ commands
 command! W write
+command! Q quit
 
 """ keys mapping
 nnoremap n nzz

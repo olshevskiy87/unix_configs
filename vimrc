@@ -24,6 +24,7 @@ Plug 'Shutnik/jshint2.vim', { 'for': 'javascript' }
 Plug 'airblade/vim-gitgutter'
 Plug 'kopischke/vim-stay'
 Plug 'tkhoa2711/vim-togglenumber'
+Plug 'fatih/vim-go', { 'for': 'go' }
 
 call plug#end()
 

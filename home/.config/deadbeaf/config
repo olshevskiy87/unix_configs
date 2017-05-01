@@ -1,9 +1,0 @@
-hotkey.key12 "Ctrl Alt Insert" 0 1 play
-hotkey.key13 "Ctrl Alt Home" 0 1 toggle_pause
-hotkey.key24 "Ctrl Alt Prior" 0 1 prev
-hotkey.key27 "Ctrl Alt End" 0 1 stop
-hotkey.key28 "Ctrl Alt Next" 0 1 next
-hotkey.key31 "Ctrl Alt Down" 0 1 volume_down
-hotkey.key32 "Ctrl Alt Up" 0 1 volume_up
-hotkey.key33 "Ctrl Alt Left" 0 1 seek_5s_back
-hotkey.key34 "Ctrl Alt Right" 0 1 seek_5s_fwd

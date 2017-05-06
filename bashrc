@@ -115,6 +115,8 @@ if which psql &> /dev/null; then
     export PGDATABASE=postgres
 fi
 
+export GOPATH=$HOME/godir
+
 # start ssh-agent if it's not already running
 if [ ! "`ps ax | grep ssh-agent | grep -ivE \"(grep|defunct)\"`" ]; then
     eval $(ssh-agent) > /dev/null 2>&1

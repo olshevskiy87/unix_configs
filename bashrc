@@ -8,9 +8,10 @@ if [ -d "$HOME/bin" ]; then
 fi
 
 # aliases
-alias ll='ls -la --color=auto'
+alias ll='ls -la --group-directories-first --color=auto'
 alias greps='grep -srni --color'
-alias glb='git lg --no-merges master..'
+alias glm='git lg --no-merges master..'
+alias gld='git lg --no-merges develop..'
 alias gsfm='git lg ^master HEAD'
 alias gbra='list_git_branches_annotated'
 alias gbrd='git branch --edit-description '

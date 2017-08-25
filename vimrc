@@ -105,6 +105,10 @@ nnoremap th :tabfirst<CR>
 nnoremap tj :tabnext<CR>
 nnoremap tk :tabprev<CR>
 nnoremap tl :tablast<CR>
+nnoremap tmr :tabmove +1<CR>
+nnoremap tml :tabmove -1<CR>
+nnoremap tmR :$tabmove<CR>
+nnoremap tmL :0tabmove<CR>
 
 " no arrows in any mode
 " normal mode

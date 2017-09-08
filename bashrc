@@ -8,6 +8,7 @@ if [ -d "$HOME/bin" ]; then
 fi
 
 # aliases
+alias g='git'
 alias ll='ls -la --group-directories-first --color=auto'
 alias greps='grep -srni --color'
 alias glm='git lg --no-merges master..'
@@ -112,11 +113,15 @@ if which vim &> /dev/null; then
 fi
 
 if which psql &> /dev/null; then
+    export PGHOST=127.0.0.1
     export PGUSER=postgres
     export PGDATABASE=postgres
 fi
 
 export GOPATH=$HOME/godir
+if [ -d "$GOPATH/bin" ]; then
+    PATH="$GOPATH/bin:$PATH"
+fi
 
 # start ssh-agent if it's not already running
 if [ ! "`ps ax | grep ssh-agent | grep -ivE \"(grep|defunct)\"`" ]; then

@@ -16,9 +16,10 @@ Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/vim-easy-align', { 'on': '<Plug>(EasyAlign)' }
 Plug 'junegunn/gv.vim', { 'on': 'GV' }
 Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
 Plug 'rhysd/committia.vim'
 if has('python') || has('python3')
-    Plug 'klen/python-mode', { 'for': 'python' }
+    Plug 'python-mode/python-mode', { 'for': 'python' }
 endif
 Plug 'Shutnik/jshint2.vim', { 'for': 'javascript' }
 Plug 'airblade/vim-gitgutter'

@@ -34,7 +34,6 @@ call plug#end()
 " common settings
 set nowrap
 set nowrapscan
-set ruler
 set showcmd
 set backspace=indent,eol,start
 set scrolloff=10
@@ -44,10 +43,9 @@ set clipboard=unnamed
 set nofoldenable
 set sidescroll=5
 set number
-set norelativenumber
 
 """ colors
-if version >= 700
+if version >= 700 && !has('g:syntax_on')
     syntax enable
 endif
 set t_Co=256
@@ -62,7 +60,6 @@ endif
 set tabstop=4
 set expandtab
 set shiftwidth=4
-set smartindent
 set pastetoggle=<F4>
 
 " show redundant whitespaces and tabs
@@ -113,23 +110,6 @@ nnoremap tml :tabmove -1<CR>
 nnoremap tmR :$tabmove<CR>
 nnoremap tmL :0tabmove<CR>
 
-" no arrows in any mode
-" normal mode
-no <down>  <Nop>
-no <left>  <Nop>
-no <right> <Nop>
-no <up>    <Nop>
-" insert mode
-ino <down>  <Nop>
-ino <left>  <Nop>
-ino <right> <Nop>
-ino <up>    <Nop>
-" visual mode
-vno <down>  <Nop>
-vno <left>  <Nop>
-vno <right> <Nop>
-vno <up>    <Nop>
-
 " change the encoding
 if version >= 700
     set wildmenu
@@ -138,13 +118,13 @@ if version >= 700
     menu Encoding.CP1251 :e ++enc=cp1251<CR>
     menu Encoding.KOI8-U :e ++enc=koi8-u<CR>
     menu Encoding.UTF-8  :e ++enc=utf-8<CR>
-    map <F8> :emenu Encoding.<TAB>
+    nmap <F8> :emenu Encoding.<TAB>
 endif
 
 """ custom plugins settings
 
 " vim-easy-align
-vmap <Enter> <Plug>(EasyAlign)
+xmap <Enter> <Plug>(EasyAlign)
 " new tab for vim-plug
 let g:plug_window = 'tabnew'
 " jshint
@@ -160,7 +140,7 @@ let g:gitgutter_max_signs = 1000
 
 " edit-open hook for commitia
 let g:committia_hooks = {}
-function! g:committia_hooks.edit_open(info)
+function! g:committia_hooks.edit_open(info) abort
     if a:info.vcs !=# 'git'
         return
     end
@@ -189,6 +169,6 @@ function! g:committia_hooks.edit_open(info)
     silent .put =fugitive#head()
 endfunction
 
-vnoremap <silent> <Leader>jp :<C-U>call myf#JsonPrettyVisual()<CR>
+xnoremap <silent> <Leader>jp :<C-U>call myf#JsonPrettyVisual()<CR>
 nnoremap <silent> <Leader>jp :call myf#JsonPretty()<CR>
 nnoremap <silent> <Leader>pm :call myf#PhpMdCheck()<CR>

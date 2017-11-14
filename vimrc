@@ -2,12 +2,7 @@ if version >= 700
     filetype plugin indent on
 endif
 
-if has('nvim')
-    call plug#begin('~/.config/nvim/plugged')
-else
-    call plug#begin('~/.vim/plugged')
-endif
-
+call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
@@ -18,17 +13,11 @@ Plug 'junegunn/gv.vim', { 'on': 'GV' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
 Plug 'rhysd/committia.vim'
-if has('python') || has('python3')
-    Plug 'python-mode/python-mode', { 'for': 'python' }
-endif
-Plug 'Shutnik/jshint2.vim', { 'for': 'javascript' }
 Plug 'airblade/vim-gitgutter'
 Plug 'kopischke/vim-stay'
 Plug 'tkhoa2711/vim-togglenumber'
 Plug 'fatih/vim-go', { 'for': 'go' }
-
 call plug#end()
 
 " common settings
@@ -105,10 +94,6 @@ nnoremap th :tabfirst<CR>
 nnoremap tj :tabnext<CR>
 nnoremap tk :tabprev<CR>
 nnoremap tl :tablast<CR>
-nnoremap tmr :tabmove +1<CR>
-nnoremap tml :tabmove -1<CR>
-nnoremap tmR :$tabmove<CR>
-nnoremap tmL :0tabmove<CR>
 
 " change the encoding
 if version >= 700
@@ -127,14 +112,6 @@ endif
 xmap <Enter> <Plug>(EasyAlign)
 " new tab for vim-plug
 let g:plug_window = 'tabnew'
-" jshint
-let JSHintUpdateWriteOnly = 1
-let g:JSHintHighlightErrorLine = 0
-" pymode
-let g:pymode_rope_complete_on_dot = 0
-let g:pymode_trim_whitespaces = 0
-let g:pymode_lint_ignore = "W191,C901,E501"
-let g:pymode_lint_sort = ['E', 'C', 'I']
 " gitgutter
 let g:gitgutter_max_signs = 1000
 

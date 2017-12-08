@@ -4,7 +4,7 @@ endif
 let g:loaded_myf = 1
 
 function! myf#JsonPrettyVisual()
-    let json_xs_test = system('which json_xs')
+    let json_xs_test = system('which json_pp')
     if empty(json_xs_test)
         echom "err: could not find json_xs utility"
         return 1
@@ -12,17 +12,17 @@ function! myf#JsonPrettyVisual()
     silent! s/\v\\u(\x{4})/\=nr2char("0x".submatch(1), 1)/g
     let redir_buf = ''
     redir => redir_buf
-    silent execute "'<,'>w ! json_xs -t json-pretty"
+    silent execute "'<,'>w ! json_pp"
     redir END
     if redir_buf =~ "shell returned"
         echom "could not parse json"
         return 1
     endif
-    silent execute  "'<,'>! json_xs -t json-pretty"
+    silent execute  "'<,'>! json_pp"
 endfu
 
 function! myf#JsonPretty()
-    let json_xs_test = system('which json_xs')
+    let json_xs_test = system('which json_pp')
     if empty(json_xs_test)
         echom "err: could not find json_xs utility"
         return 1
@@ -30,13 +30,13 @@ function! myf#JsonPretty()
     silent! %s/\v\\u(\x{4})/\=nr2char("0x".submatch(1), 1)/g
     let redir_buf = ''
     redir => redir_buf
-    silent execute "w ! json_xs -t json-pretty"
+    silent execute "w ! json_pp"
     redir END
     if redir_buf =~ "shell returned"
         echom "could not parse json"
         return 1
     endif
-    silent execute  "%! json_xs -t json-pretty"
+    silent execute  "%! json_pp"
 endfu
 
 function! myf#SortPhpMdErrors(i1, i2)

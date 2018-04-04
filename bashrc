@@ -122,6 +122,7 @@ export GOPATH=$HOME/godir
 if [ -d "$GOPATH/bin" ]; then
     PATH="$GOPATH/bin:$PATH"
 fi
+export GOCACHE=off
 if [ -d "$HOME/.cargo/bin" ]; then
     PATH="$HOME/.cargo/bin:$PATH"
 fi

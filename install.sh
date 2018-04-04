@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-dotfiles="profile bashrc vimrc psqlrc gitconfig tmux.conf pylintrc jshintrc"
+dotfiles="profile bashrc vimrc gitconfig tmux.conf"
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}"i)" && pwd)"
 
 mkdir -p ~/bin

@@ -95,7 +95,5 @@ assign [class="google-chrome"] 2
 assign [class="Google-chrome"] 2
 assign [class="Pidgin"] 3
 assign [class="Mail"] 3
-assign [class="Icedove"] 3
 
-exec --no-startup-id icedove
 exec --no-startup-id pidgin

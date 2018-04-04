@@ -115,37 +115,6 @@ let g:plug_window = 'tabnew'
 " gitgutter
 let g:gitgutter_max_signs = 1000
 
-" edit-open hook for commitia
-let g:committia_hooks = {}
-function! g:committia_hooks.edit_open(info) abort
-    if a:info.vcs !=# 'git'
-        return
-    end
-    let git_dir = fugitive#extract_git_dir(expand('%:p'))
-    let git_repo = fugitive#repo(git_dir)
-    let git_repo_user = git_repo.config('user.name').' <'.git_repo.config('user.email').'>'
-
-    let git_log_date_fmt = 'format:%d.%m.%Y %H:%M'
-    if fugitive#git_version() =~# '^0\|^1\.\|^2\.[1-6]\.'
-        let git_log_date_fmt = 'iso'
-    endif
-
-    let opts = [
-        \ '-3',
-        \ '--date=' . git_log_date_fmt,
-        \ '--format=%cd  %s (%cn)',
-        \ '--no-merges'
-    \ ]
-    let git_args = ['log'] + opts
-    let git_log_cmd = call(git_repo.git_command, git_args, git_repo)
-    normal gg
-    let head_comment = map(split(system(git_log_cmd), '\n'), "'# '.v:val")
-        \ + ["\n# as " . git_repo_user . "\n"]
-    silent 0put =head_comment
-    normal 1j
-    silent .put =fugitive#head()
-endfunction
-
 xnoremap <silent> <Leader>jp :<C-U>call myf#JsonPrettyVisual()<CR>
 nnoremap <silent> <Leader>jp :call myf#JsonPretty()<CR>
 nnoremap <silent> <Leader>pm :call myf#PhpMdCheck()<CR>

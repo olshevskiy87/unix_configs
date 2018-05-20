@@ -17,7 +17,7 @@ if [ "$?" -eq "0" ]; then
 else
     alias ll='ls -la --group-directories-first --color=auto'
 fi
-
+alias crontab='crontab -i'
 alias greps='grep -srni --color'
 icdiff > /dev/null 2>&1
 if [ "$?" -eq "0" ]; then

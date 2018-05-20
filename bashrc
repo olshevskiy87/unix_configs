@@ -8,7 +8,13 @@ if [ -d "$HOME/bin" ]; then
 fi
 
 # aliases
-alias ll='ls -la --group-directories-first --color=auto'
+exa > /dev/null 2>&1
+if [ "$?" -eq "0" ]; then
+    alias ll="exa -lag -B --time-style long-iso --sort type"
+else
+    alias ll='ls -la --group-directories-first --color=auto'
+fi
+
 alias greps='grep -srni --color'
 icdiff > /dev/null 2>&1
 if [ "$?" -eq "0" ]; then

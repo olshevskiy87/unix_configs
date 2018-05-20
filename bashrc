@@ -6,6 +6,9 @@ umask 0002
 if [ -d "$HOME/bin" ]; then
     PATH="$HOME/bin:$PATH"
 fi
+if [ -d "$HOME/.cargo/bin" ]; then
+    PATH="$HOME/.cargo/bin:$PATH"
+fi
 
 # aliases
 exa > /dev/null 2>&1
@@ -42,9 +45,6 @@ if [ -d "$GOPATH/bin" ]; then
     PATH="$GOPATH/bin:$PATH"
 fi
 export GOCACHE=off
-if [ -d "$HOME/.cargo/bin" ]; then
-    PATH="$HOME/.cargo/bin:$PATH"
-fi
 
 # start ssh-agent if it's not already running
 if [ ! "`ps ax | grep ssh-agent | grep -ivE \"(grep|defunct)\"`" ]; then

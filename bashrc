@@ -26,6 +26,8 @@ if [ "$?" -eq "0" ]; then
 fi
 alias vlg='vim -p $(git show --pretty="format:" --name-only)'
 alias vsg='vim -p $(git status -s | awk '"'"'{print $2}'"'"')'
+alias vg='vim -c "GV"'
+alias vga='vim -c "GV --all"'
 
 if [ -f "$HOME/.custom_aliases.sh" ]; then
     source "$HOME/.custom_aliases.sh"

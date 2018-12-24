@@ -39,7 +39,7 @@ function! myf#JsonPretty()
     silent execute  "%! json_pp"
 endfu
 
-function! myf#SortPhpMdErrors(i1, i2)
+function! myf#SortPhpStaticAnalyseErrors(i1, i2)
     if a:i1.text == a:i2.text
         return 0
     elseif a:i1.text > a:i2.text
@@ -66,10 +66,15 @@ function! myf#PhpMdCheck()
             \ '! phpmd '.
             \ fname.
             \ ' text'.
-            \ ' unusedcode,codesize,naming,design,cleancode,controversial'
+            \ ' unusedcode'
         \ ), '\n')
     " filter empty strings
     let filtered_out = filter(pmd_out, '!empty(v:val)')
+    if !len(filtered_out)
+        cclose
+        echo 'phpmd: no issues'
+        return 0
+    endif
     let errors_list = []
     for line in filtered_out
         let mtch = matchlist(line, '^\([^:]\+\):\(\d\+\)\s\+\(.*\)$')
@@ -86,7 +91,65 @@ function! myf#PhpMdCheck()
         \ )
     endfor
 
-    let sorted_list = sort(errors_list, "myf#SortPhpMdErrors")
+    let sorted_list = sort(errors_list, "myf#SortPhpStaticAnalyseErrors")
+    call setqflist(sorted_list)
+    copen
+
+    return 0
+endfunction
+
+function! myf#PhpStanCheck(...)
+    let a:level = get(a:, 1, 0)
+
+    let phpstan_config=$PHPSTAN_CONFIG
+    if phpstan_config == ''
+        echo 'env PHPSTAN_CONFIG is not defined. use "config.neon"'
+        let phpstan_config='config.neon'
+    endif
+
+    let fname = expand("%:p")
+
+    " check if current file is readable
+    if !filereadable(fname)
+        echo 'no file'
+        return 1
+    endif
+
+    " clear the quickfixlist
+    call setqflist([])
+
+    " run phpstan with params
+    let phpstan_out = split(system(
+            \ '! phpstan analyse'.
+            \ ' -c '.phpstan_config.
+            \ ' -l '.a:level.
+            \ ' --error-format=raw --no-progress'.
+            \ ' -- '.fname
+        \ ), '\n')
+    " filter empty strings
+    let filtered_out = filter(phpstan_out, '!empty(v:val)')
+    if !len(filtered_out)
+        cclose
+        echo 'phpstan (level '.a:level.'): no issues'
+        return 0
+    endif
+    let errors_list = []
+    for line in filtered_out
+        let mtch = matchlist(line, '^\([^:]\+\):\(\d\+\):\(.*\)$')
+        if !len(mtch)
+            continue
+        endif
+        call add(
+            \ errors_list, {
+                \ "filename": mtch[1],
+                \ "lnum": mtch[2],
+                \ "text": mtch[3],
+                \ "type": "E"
+            \ }
+        \ )
+    endfor
+
+    let sorted_list = sort(errors_list, "myf#SortPhpStaticAnalyseErrors")
     call setqflist(sorted_list)
     copen
 

@@ -118,3 +118,4 @@ let g:gitgutter_max_signs = 1000
 xnoremap <silent> <Leader>jp :<C-U>call myf#JsonPrettyVisual()<CR>
 nnoremap <silent> <Leader>jp :call myf#JsonPretty()<CR>
 nnoremap <silent> <Leader>pm :call myf#PhpMdCheck()<CR>
+nnoremap <silent> <Leader>ps :call myf#PhpStanCheck()<CR>

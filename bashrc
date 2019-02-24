@@ -1,5 +1,8 @@
-# set prompt
+# env. variables
 export PS1="[\u@\h \w]$ "
+if which vim &> /dev/null; then
+    export EDITOR=vim
+fi
 
 umask 0002
 
@@ -21,11 +24,8 @@ alias crontab='crontab -i'
 alias greps='grep -srni --color'
 icdiff > /dev/null 2>&1
 if [ "$?" -eq "0" ]; then
-   alias gic='git difftool -y --extcmd icdiff'
    alias gicl='git difftool -y --extcmd icdiff --color=always | less -R'
 fi
-alias vlg='vim -p $(git show --pretty="format:" --name-only)'
-alias vsg='vim -p $(git status -s | awk '"'"'{print $2}'"'"')'
 alias vg='vim -c "GV"'
 alias vga='vim -c "GV --all"'
 
@@ -36,17 +36,6 @@ fi
 if which tmux &> /dev/null; then
     alias tmux='TERM=screen-256color-bce tmux'
 fi
-
-# env. variables
-if which vim &> /dev/null; then
-    export EDITOR=vim
-fi
-
-export GOPATH=$HOME/godir
-if [ -d "$GOPATH/bin" ]; then
-    PATH="$GOPATH/bin:$PATH"
-fi
-export GOCACHE=off
 
 # start ssh-agent if it's not already running
 if [ ! "`ps ax | grep ssh-agent | grep -ivE \"(grep|defunct)\"`" ]; then
@@ -61,8 +50,6 @@ fi
 
 # close ssh-agent if it had been started in the current session
 trap 'test -n "$SSH_AGENT_PID" && eval `/usr/bin/ssh-agent -k`' 0
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 if [ -f "$HOME/.bashrc.custom" ]; then
     source $HOME/.bashrc.custom

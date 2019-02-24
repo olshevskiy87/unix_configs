@@ -1,14 +1,11 @@
 [alias]
-    st = status -s -b           # short mode for status
+    st = status -s -b # short mode for status
     br = branch
     co = checkout
     cb = checkout -b
     ci = commit
-    # pretty log shortcuts
     lg = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(green)%d%Creset %s %C(red)(%cr) %C(yellow)<%an>%Creset'
-    llg = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(green)%d%Creset %s %C(red)(%ci) %C(yellow)<%an>%Creset' origin/HEAD HEAD
-    difft = difftool -y         # difftool without an accepting
-    shows = show --stat         # show with statistics
+    shows = show --stat
 [user]
     email = olshevskiy87@bk.ru
     name = Dmitriy Olshevskiy
@@ -30,7 +27,7 @@
     changed = green
     untracked = cyan
 [diff]
-    tool = vimdiff              # vim as default diff tool
+    tool = vimdiff # vim as default diff tool
     compactionHeuristic = true
 [merge]
     tool = vimdiff

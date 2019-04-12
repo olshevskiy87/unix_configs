@@ -39,7 +39,7 @@ try | colorscheme seoul256 | catch | endtry
 
 if exists('+colorcolumn')
     highlight ColorColumn ctermbg=235 guibg=#2c2d27
-    let &colorcolumn="100"
+    let &colorcolumn="120"
 endif
 
 " indentation

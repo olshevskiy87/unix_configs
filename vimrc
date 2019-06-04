@@ -30,7 +30,7 @@ set nofoldenable
 set sidescroll=5
 set number
 
-""" colors
+" colors
 if version >= 700 && !has('g:syntax_on')
     syntax enable
 endif
@@ -69,11 +69,7 @@ if version > 730
     augroup END
 endif
 
-""" commands
-command! W write
-command! Q quit
-
-""" keys mapping
+" keys mapping
 nnoremap n nzz
 nnoremap N Nzz
 nnoremap J gJ
@@ -82,7 +78,7 @@ nnoremap <F3> :ToggleNumber<cr>
 nnoremap <F6> :GitGutterToggle<cr>
 nnoremap <F7> :set expandtab!<cr>
 
-" hide highlighting of the search results by pressing Enter
+" hide highlighting of the search results
 nnoremap <Tab> :noh<CR>
 
 " tabs keys mapping

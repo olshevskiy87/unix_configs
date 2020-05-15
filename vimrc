@@ -15,6 +15,8 @@ Plug 'rhysd/committia.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'kopischke/vim-stay'
 Plug 'tkhoa2711/vim-togglenumber'
+Plug 'fatih/vim-go'
+Plug 'olshevskiy87/vim-php-check'
 call plug#end()
 
 " common settings
@@ -29,6 +31,7 @@ set clipboard=unnamed
 set nofoldenable
 set sidescroll=5
 set number
+set updatetime=500
 
 " colors
 if version >= 700 && !has('g:syntax_on')
@@ -110,5 +113,3 @@ let g:gitgutter_max_signs = 1000
 
 xnoremap <silent> <Leader>jp :<C-U>call myf#JsonPrettyVisual()<CR>
 nnoremap <silent> <Leader>jp :call myf#JsonPretty()<CR>
-nnoremap <silent> <Leader>pm :call myf#PhpMdCheck()<CR>
-nnoremap <silent> <Leader>ps :call myf#PhpStanCheck()<CR>

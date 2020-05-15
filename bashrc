@@ -12,6 +12,12 @@ fi
 if [ -d "$HOME/.cargo/bin" ]; then
     PATH="$HOME/.cargo/bin:$PATH"
 fi
+if [ -d "/usr/local/go/bin" ]; then
+    PATH=$PATH:/usr/local/go/bin
+fi
+if [ -d "$HOME/go/bin" ]; then
+    PATH="$HOME/go/bin:$PATH"
+fi
 
 # aliases
 exa > /dev/null 2>&1
@@ -60,3 +66,6 @@ fi
 if [ -f /etc/bash_completion ]; then
     source /etc/bash_completion
 fi
+
+export GOPATH="$HOME/go"
+export GOBIN="$HOME/go/bin"

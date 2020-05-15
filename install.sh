@@ -29,8 +29,6 @@ git submodule update --init --recursive
 
 # install plugin manager
 create_or_update_file ~/.vim/autoload plug.vim vim-plug
-# install myf.vim
-create_or_update_file ~/.vim/autoload myf.vim ./home/.vim/autoload
 # ssh-find-agent
 create_or_update_file ~ ssh-find-agent.sh ssh-find-agent
 

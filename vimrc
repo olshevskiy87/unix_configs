@@ -17,6 +17,7 @@ Plug 'kopischke/vim-stay'
 Plug 'tkhoa2711/vim-togglenumber'
 Plug 'fatih/vim-go'
 Plug 'olshevskiy87/vim-php-check'
+Plug 'olshevskiy87/vim-pretty-json'
 call plug#end()
 
 " common settings
@@ -110,6 +111,3 @@ xmap <Enter> <Plug>(EasyAlign)
 let g:plug_window = 'tabnew'
 " gitgutter
 let g:gitgutter_max_signs = 1000
-
-xnoremap <silent> <Leader>jp :<C-U>call myf#JsonPrettyVisual()<CR>
-nnoremap <silent> <Leader>jp :call myf#JsonPretty()<CR>

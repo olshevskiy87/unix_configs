@@ -33,3 +33,5 @@
     tool = vimdiff
 [include]
     path = ~/.gitconfig.custom
+[pull]
+	rebase = false

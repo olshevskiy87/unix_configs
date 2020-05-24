@@ -20,20 +20,24 @@ if [ -d "$HOME/go/bin" ]; then
 fi
 
 # aliases
-exa > /dev/null 2>&1
+exa --version > /dev/null 2>&1
 if [ "$?" -eq "0" ]; then
-    alias ll="exa -lag -B --time-style long-iso --sort type"
+    alias ll="exa -lag -B --time-style long-iso --sort type --git"
 else
     alias ll='ls -la --group-directories-first --color=auto'
 fi
 alias crontab='crontab -i'
 alias greps='grep -srni --color'
-icdiff > /dev/null 2>&1
+icdiff --version > /dev/null 2>&1
 if [ "$?" -eq "0" ]; then
    alias gicl='git difftool -y --extcmd icdiff --color=always | less -R'
 fi
 alias vg='vim -c "GV"'
 alias vga='vim -c "GV --all"'
+xclip -version > /dev/null 2>&1
+if [ "$?" -eq "0" ]; then
+   alias clip='xclip -selection c'
+fi
 
 if [ -f "$HOME/.custom_aliases.sh" ]; then
     source "$HOME/.custom_aliases.sh"

@@ -6,7 +6,7 @@ floating_modifier $mod
 
 bindsym $mod+Return exec i3-sensible-terminal
 
-set $Lock i3lock -e -c 333333 -f
+set $Lock i3lock --ignore-empty-password --show-failed-attempts --color 333333
 bindsym $mod+l exec $Lock
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec dmenu_run

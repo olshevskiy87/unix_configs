@@ -73,3 +73,7 @@ fi
 
 export GOPATH="$HOME/go"
 export GOBIN="$HOME/go/bin"
+
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+
+[[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"

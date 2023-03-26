@@ -78,6 +78,7 @@ nnoremap n nzz
 nnoremap N Nzz
 nnoremap J gJ
 nnoremap 0 ^
+nnoremap gb :Git blame<cr>
 nnoremap <F3> :ToggleNumber<cr>
 nnoremap <F6> :GitGutterToggle<cr>
 nnoremap <F7> :set expandtab!<cr>

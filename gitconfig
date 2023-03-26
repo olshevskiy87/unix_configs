@@ -34,4 +34,7 @@
 [include]
     path = ~/.gitconfig.custom
 [pull]
-	rebase = false
+    rebase = false
+    ff = only
+[init]
+    defaultBranch = master
